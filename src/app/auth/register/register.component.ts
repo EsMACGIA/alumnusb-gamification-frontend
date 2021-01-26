@@ -6,4 +6,9 @@ import { NbRegisterComponent } from '@nebular/auth';
   templateUrl: './register.component.html',
 })
 export class NgxRegisterComponent extends NbRegisterComponent {
+
+  registerUser(form) {
+    console.log("RegisterUser called!")
+  }
+
 }

@@ -6,4 +6,9 @@ import { NbLoginComponent } from '@nebular/auth';
   templateUrl: './login.component.html',
 })
 export class NgxLoginComponent extends NbLoginComponent {
+
+  auth(form){
+    console.log("Auth called!")
+  }
+
 }
