@@ -16,6 +16,9 @@ import {
 import { NgxLoginComponent } from './login/login.component';
 import { NgxRegisterComponent } from './register/register.component';
 
+// Providers
+import { AuthService } from './auth.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,6 +35,9 @@ import { NgxRegisterComponent } from './register/register.component';
     NgxLoginComponent,
     NgxRegisterComponent
   ],
+  providers: [
+    AuthService
+  ]
 })
 export class NgxAuthModule {
 }
