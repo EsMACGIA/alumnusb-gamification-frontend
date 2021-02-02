@@ -15,8 +15,8 @@ export const routes: Routes = [
   },
   {
     path: 'landingpage',
-    component: LandingpageComponent
-    // loadChildren: './landingpage/landingpage.component'
+    loadChildren: () => import('./landingpage/landingpage.module')
+    .then(m => m.LandingPageModule)
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },

@@ -20,11 +20,9 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { CollapseModule } from "ngx-bootstrap/collapse";
 
 @NgModule({
-  declarations: [AppComponent, LandingpageComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,7 +39,6 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
-    CollapseModule.forRoot(),
   ],
   bootstrap: [AppComponent],
 })

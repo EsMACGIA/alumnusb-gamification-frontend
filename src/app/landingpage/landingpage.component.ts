@@ -14,6 +14,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
 import { Component, OnInit, OnDestroy } from "@angular/core";
+import { NbSpinnerService } from "@nebular/theme";
 import Chart from "chart.js";
 
 @Component({
@@ -24,12 +25,14 @@ import Chart from "chart.js";
 
 export class LandingpageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-  constructor() {}
+  private alive = true;
+
+  constructor(private spinner$: NbSpinnerService) {}
 
   ngOnInit() {
+    this.spinner$.load();
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
-    console.log('alive')
 
     var canvas: any = document.getElementById("chartBig");
     var ctx = canvas.getContext("2d");
@@ -128,8 +131,11 @@ export class LandingpageComponent implements OnInit, OnDestroy {
         }
       }
     });
+    console.log('alive')
+
   }
   ngOnDestroy() {
+    this.alive = false;
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("landing-page");
   }
