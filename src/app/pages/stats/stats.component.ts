@@ -10,7 +10,7 @@ import { StatsService } from './stats.service';
 })
 
 export class StatsComponent {
-  
+
   userId: Number;
   stats = new StatsModel();
 
@@ -18,7 +18,7 @@ export class StatsComponent {
     private statsService: StatsService,
     ) {
       this.userId = Number(localStorage.getItem('userId'));
-      this.getData(this.userId);    
+      this.getData(this.userId);
   }
 
   getData(id) {
@@ -26,6 +26,6 @@ export class StatsComponent {
       if (data) {
         this.stats = data;
       }
-    }) 
+    });
   }
 }

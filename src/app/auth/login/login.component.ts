@@ -36,7 +36,7 @@ export class NgxLoginComponent extends NbLoginComponent {
       if (data) {
         if (data.token) {
           localStorage.setItem('currentToken', data.token);
-          localStorage.setItem('userId', data.user_id)
+          localStorage.setItem('userId', data.user_id);
           this.router.navigate(['/']);
         } else if (data.error) {
           this.showToast('danger', 'Hubo un error al iniciar sesión', '');
