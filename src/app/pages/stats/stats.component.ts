@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { StatsModel } from './stats.model';
+import { StatsService } from './stats.service';
 
 
 @Component({
@@ -9,18 +10,22 @@ import { StatsModel } from './stats.model';
 })
 
 export class StatsComponent {
+  
+  userId: Number;
+  stats = new StatsModel();
 
-stats = {
-    email: 'jean@gmail.com',
-    average_gift: 0.0,
-    largest_gift: 0.0,
-    smallest_gift: 0.0,
-    total_gifts: 0.0,
-    best_gift_year_total: 0.0,
-    best_gift_year: 0,
-    first_gift_date: '2020-01-01',
-    last_gift_date: '2020-01-01',
-    total_number_of_gifts: 0,
-    };
+  constructor(
+    private statsService: StatsService,
+    ) {
+      this.userId = Number(localStorage.getItem('userId'));
+      this.getData(this.userId);    
+  }
 
+  getData(id) {
+    this.statsService.getStats(id).subscribe(data => {
+      if (data) {
+        this.stats = data;
+      }
+    }) 
+  }
 }
