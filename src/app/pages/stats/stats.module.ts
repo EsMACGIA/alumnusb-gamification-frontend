@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
-import { 
-    NbCardModule 
+import {
+    NbCardModule,
   } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { StatsComponent } from './stats.component';
 
 @NgModule({
-    
+
     imports: [
       NbCardModule,
       ThemeModule,
     ],
     declarations: [
-      StatsComponent
-    ]
+      StatsComponent,
+    ],
 })
 
 export class StatsModule {}
