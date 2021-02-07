@@ -1,0 +1,107 @@
+<h1>Estadísticas</h1>
+<div class="row">
+  <div class="col-md-3">
+    <nb-flip-card>
+      <nb-card-front>
+        <nb-card accent="success">
+          <nb-card-header>
+            Mejor donación
+          </nb-card-header>
+          <nb-card-body>
+            {{stats.largest_gift}}$
+          </nb-card-body>
+        </nb-card>
+      </nb-card-front>
+      <nb-card-back>
+        <nb-card accent="danger">
+          <nb-card-header>
+            Menor donación
+          </nb-card-header>
+          <nb-card-body>
+            {{stats.smallest_gift}}$
+          </nb-card-body>
+        </nb-card>
+      </nb-card-back>
+    </nb-flip-card>
+  </div>
+  <div class="col-md-3">
+    <nb-reveal-card>
+      <nb-card-front>
+        <nb-card accent="info">
+          <nb-card-header>
+            Fecha de la primera donación
+          </nb-card-header>
+          <nb-card-body>
+            {{stats.first_gift_date}}
+          </nb-card-body>
+        </nb-card>
+      </nb-card-front>
+      <nb-card-back>
+        <nb-card accent="info">
+          <nb-card-header>
+            Fecha de la ultima donación
+          </nb-card-header>
+          <nb-card-body>
+            {{stats.last_gift_date}}
+          </nb-card-body>
+        </nb-card>
+      </nb-card-back>
+    </nb-reveal-card>
+  </div>
+  <div class="col-md-6">
+    <nb-reveal-card>
+      <nb-card-front>
+        <nb-card accent="warning">
+          <nb-card-header>
+            Año de mejor donación
+          </nb-card-header>
+          <nb-card-body>
+            {{stats.best_gift_year}}
+          </nb-card-body>
+        </nb-card>
+      </nb-card-front>
+      <nb-card-back>
+        <nb-card accent="success">
+          <nb-card-header>
+            Total donado en el mejor año
+          </nb-card-header>
+          <nb-card-body>
+            {{stats.best_gift_year_total}}$
+          </nb-card-body>
+        </nb-card>
+      </nb-card-back>
+    </nb-reveal-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <nb-card accent="info">
+      <nb-card-header>
+        Donación Promedio
+      </nb-card-header>
+      <nb-card-body>
+        {{stats.average_gift}}$
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-4">
+    <nb-card accent="primary">
+      <nb-card-header>
+        Número de Donaciones
+      </nb-card-header>
+      <nb-card-body>
+        {{stats.total_number_of_gifts}}
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-md-4">
+    <nb-card accent="success">
+      <nb-card-header>
+        Total donado
+      </nb-card-header>
+      <nb-card-body>
+        {{stats.total_gifts}}$
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
