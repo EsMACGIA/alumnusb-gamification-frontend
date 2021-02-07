@@ -8,7 +8,7 @@
             Mejor donación
           </nb-card-header>
           <nb-card-body>
-            {{stats.largest_gift}}$
+            {{stats.largest_gift | currency}}
           </nb-card-body>
         </nb-card>
       </nb-card-front>
@@ -18,7 +18,7 @@
             Menor donación
           </nb-card-header>
           <nb-card-body>
-            {{stats.smallest_gift}}$
+            {{stats.smallest_gift | currency}}
           </nb-card-body>
         </nb-card>
       </nb-card-back>
@@ -32,7 +32,7 @@
             Fecha de la primera donación
           </nb-card-header>
           <nb-card-body>
-            {{stats.first_gift_date}}
+            {{stats.first_gift_date | date}}
           </nb-card-body>
         </nb-card>
       </nb-card-front>
@@ -42,7 +42,7 @@
             Fecha de la ultima donación
           </nb-card-header>
           <nb-card-body>
-            {{stats.last_gift_date}}
+            {{stats.last_gift_date | date}}
           </nb-card-body>
         </nb-card>
       </nb-card-back>
@@ -56,7 +56,7 @@
             Año de mejor donación
           </nb-card-header>
           <nb-card-body>
-            {{stats.best_gift_year}}
+            {{stats.best_gift_year | date}}
           </nb-card-body>
         </nb-card>
       </nb-card-front>
@@ -66,7 +66,7 @@
             Total donado en el mejor año
           </nb-card-header>
           <nb-card-body>
-            {{stats.best_gift_year_total}}$
+            {{stats.best_gift_year_total | currency}}
           </nb-card-body>
         </nb-card>
       </nb-card-back>
@@ -80,7 +80,7 @@
         Donación Promedio
       </nb-card-header>
       <nb-card-body>
-        {{stats.average_gift}}$
+        {{stats.average_gift | currency}}
       </nb-card-body>
     </nb-card>
   </div>
@@ -100,7 +100,7 @@
         Total donado
       </nb-card-header>
       <nb-card-body>
-        {{stats.total_gifts}}$
+        {{stats.total_gifts | currency}}
       </nb-card-body>
     </nb-card>
   </div>
