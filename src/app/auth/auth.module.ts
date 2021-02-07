@@ -5,16 +5,19 @@ import { RouterModule } from '@angular/router';
 
 import { NgxAuthRoutingModule } from './auth-routing.module';
 import { NbAuthModule } from '@nebular/auth';
-import { 
+import {
   NbAlertModule,
   NbButtonModule,
   NbCheckboxModule,
-  NbInputModule
+  NbInputModule,
 } from '@nebular/theme';
 
 // Components
 import { NgxLoginComponent } from './login/login.component';
 import { NgxRegisterComponent } from './register/register.component';
+
+// Providers
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -26,11 +29,14 @@ import { NgxRegisterComponent } from './register/register.component';
     NbButtonModule,
     NbCheckboxModule,
     NgxAuthRoutingModule,
-    NbAuthModule
+    NbAuthModule,
   ],
   declarations: [
     NgxLoginComponent,
-    NgxRegisterComponent
+    NgxRegisterComponent,
+  ],
+  providers: [
+    AuthService,
   ],
 })
 export class NgxAuthModule {

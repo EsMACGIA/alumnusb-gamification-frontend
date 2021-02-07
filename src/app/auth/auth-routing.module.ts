@@ -9,7 +9,7 @@ import { NgxRegisterComponent } from './register/register.component';
 export const routes: Routes = [
   {
     path: '',
-    component: NbAuthComponent, 
+    component: NbAuthComponent,
     children: [
       {
         path: 'login',
@@ -18,8 +18,8 @@ export const routes: Routes = [
       {
         path: 'register',
         component: NgxRegisterComponent,
-      }
-    ]
+      },
+    ],
   },
 ];
 
