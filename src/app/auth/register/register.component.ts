@@ -17,7 +17,7 @@ export class NgxRegisterComponent extends NbRegisterComponent {
   duration = 4000;
   hasIcon = true;
   preventDuplicates = false;
-  position:NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
+  position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   index = 1;
 
   constructor(
@@ -26,29 +26,29 @@ export class NgxRegisterComponent extends NbRegisterComponent {
     router: Router,
     cd: ChangeDetectorRef,
     @Inject(NB_AUTH_OPTIONS) options: {},
-    private toastrService: NbToastrService
+    private toastrService: NbToastrService,
   ) {
-    super(service, options, cd, router)
+    super(service, options, cd, router);
   }
 
   registerUser(user) {
     this.authService.register(user).subscribe(data => {
       if (data) {
         if (data.id) {
-          this.showToast('success','Te has registrado satisfactoriamente', '');
-          this.router.navigate(['/auth/login'])
+          this.showToast('success', 'Te has registrado satisfactoriamente', '');
+          this.router.navigate(['/auth/login']);
         } else if (data.username) {
-          this.showToast('danger','Error al registrar', data.username[0]);
+          this.showToast('danger', 'Error al registrar', data.username[0]);
         } else if (data.password) {
-          this.showToast('danger','Error al registrar', data.password[0]);
+          this.showToast('danger', 'Error al registrar', data.password[0]);
         } else if (data.email) {
-          this.showToast('danger','Error al registrar', data.email[0]);
+          this.showToast('danger', 'Error al registrar', data.email[0]);
         }
       }
-    })
+    });
   }
 
-  private showToast(type: NbComponentStatus, title: string, body: string){
+  private showToast(type: NbComponentStatus, title: string, body: string) {
     const config = {
       status: type,
       destroyByClick: this.destroyByClick,

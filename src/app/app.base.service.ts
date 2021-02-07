@@ -1,7 +1,7 @@
 import { of, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { catchError, tap } from 'rxjs/operators'
-import { HttpHeaders, HttpClient } from '@angular/common/http'
+import { catchError, tap } from 'rxjs/operators';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 /**
  * Service with methods to add, edit or
@@ -13,10 +13,10 @@ import { HttpHeaders, HttpClient } from '@angular/common/http'
 @Injectable()
 export class BaseService {
 
-    API_URL:string = "https://gamification-api-dev.herokuapp.com/api/"
+    API_URL: string = 'https://gamification-api-dev.herokuapp.com/api/';
     httpOptions = {
-        headers: new HttpHeaders({'Content-Type': 'application/json'})
-    }
+        headers: new HttpHeaders({'Content-Type': 'application/json'}),
+    };
 
     /**
      *Creates an instance of BaseService.
@@ -24,22 +24,22 @@ export class BaseService {
      * @memberof BaseService
      */
     constructor(
-        private http: HttpClient
-    ){}
-    
+        private http: HttpClient,
+    ) {}
+
     /**
      * Method to get elements from backend
      *
      * @param {string} endpoint // Provides the endpoint to access backend.
      * @returns {Observable<any>} Return list of elements
-     * if everything is ok or error if not 
+     * if everything is ok or error if not
      * @memberof BaseService
      */
-    getBase(endpoint: string, httpOptions = this.httpOptions):Observable<any>{
-        let apiURL =  `${this.API_URL}${endpoint}`
+    getBase(endpoint: string, httpOptions = this.httpOptions): Observable<any> {
+        const apiURL =  `${this.API_URL}${endpoint}`;
         return this.http.get(apiURL, httpOptions).pipe(
-            catchError(this.handleError('getBase'))
-        )
+            catchError(this.handleError('getBase')),
+        );
     }
 
     /**
@@ -51,11 +51,11 @@ export class BaseService {
      * or error if not
      * @memberof BaseService
      */
-    postBase(element: Object, endpoint: string, httpOptions = this.httpOptions):Observable<any>{
-        let apiURL =  `${this.API_URL}${endpoint}`
+    postBase(element: Object, endpoint: string, httpOptions = this.httpOptions): Observable<any> {
+        const apiURL =  `${this.API_URL}${endpoint}`;
         return this.http.post(apiURL, element, httpOptions).pipe(
-            catchError(this.handleError<any>('postBase'))
-        )
+            catchError(this.handleError<any>('postBase')),
+        );
     }
 
     /**
@@ -67,11 +67,11 @@ export class BaseService {
      * or error if not
      * @memberof BaseService
      */
-    putBase(element: Object, endpoint: string, httpOptions = this.httpOptions):Observable<any>{
-        let apiURL =  `${this.API_URL}${endpoint}`
+    putBase(element: Object, endpoint: string, httpOptions = this.httpOptions): Observable<any> {
+        const apiURL =  `${this.API_URL}${endpoint}`;
         return this.http.put(apiURL, element, httpOptions).pipe(
-            catchError(this.handleError<any>('putBase'))
-        )
+            catchError(this.handleError<any>('putBase')),
+        );
     }
 
     /**
@@ -82,14 +82,13 @@ export class BaseService {
      * or error if not
      * @memberof BaseService
      */
-    deleteBase(element: Object, endpoint:string, httpOptions = this.httpOptions):Observable<any>{
-        let apiURL = `${this.API_URL}${endpoint}`
+    deleteBase(element: Object, endpoint: string, httpOptions = this.httpOptions): Observable<any> {
+        const apiURL = `${this.API_URL}${endpoint}`;
         return this.http.delete(apiURL, httpOptions).pipe(
-            catchError(this.handleError<any>('deleteBase'))
-        )
+            catchError(this.handleError<any>('deleteBase')),
+        );
     }
 
-    
     /**
      * Method to handle errors
      *
@@ -99,24 +98,24 @@ export class BaseService {
      * @returns Observable with error info
      * @memberof BaseService
      */
-    private handleError<T>(operation = 'operation'){
-        return (error_object: any):Observable<T> =>{
-            return of(error_object)
-        }
+    private handleError<T>(operation = 'operation') {
+        return (error_object: any): Observable<T> => {
+            return of(error_object);
+        };
     }
 
     /**
      * Method to set authorization headers
      */
-    setHeaders():any {
-        let httpOptions = {
+    setHeaders(): any {
+        const httpOptions = {
             headers: new HttpHeaders(
                 {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('currentToken')}`
-                }
-            )
-        }
+                    'Authorization': `Bearer ${localStorage.getItem('currentToken')}`,
+                },
+            ),
+        };
         return httpOptions;
     }
 }

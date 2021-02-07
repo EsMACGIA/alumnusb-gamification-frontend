@@ -1,7 +1,7 @@
 import { Component, Inject, ChangeDetectorRef } from '@angular/core';
 import { NbLoginComponent, NbAuthService, NB_AUTH_OPTIONS } from '@nebular/auth';
 
-import { AuthService } from '../auth.service'
+import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
@@ -17,7 +17,7 @@ export class NgxLoginComponent extends NbLoginComponent {
   duration = 4000;
   hasIcon = true;
   preventDuplicates = false;
-  position:NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
+  position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   index = 1;
 
   constructor(
@@ -26,25 +26,25 @@ export class NgxLoginComponent extends NbLoginComponent {
     router: Router,
     cd: ChangeDetectorRef,
     @Inject(NB_AUTH_OPTIONS) options: {},
-    private toastrService: NbToastrService
+    private toastrService: NbToastrService,
   ) {
-    super(service, options, cd, router)
+    super(service, options, cd, router);
   }
-  
-  auth(user){
+
+  auth(user) {
     this.authService.login(user).subscribe(data => {
       if (data) {
         if (data.token) {
           localStorage.setItem('currentToken', data.token);
-          this.router.navigate(['/'])
+          this.router.navigate(['/']);
         } else if (data.error) {
-          this.showToast('danger','Hubo un error al iniciar sesión', '');
+          this.showToast('danger', 'Hubo un error al iniciar sesión', '');
         }
       }
-    })
+    });
   }
 
-  private showToast(type: NbComponentStatus, title: string, body: string){
+  private showToast(type: NbComponentStatus, title: string, body: string) {
     const config = {
       status: type,
       destroyByClick: this.destroyByClick,
