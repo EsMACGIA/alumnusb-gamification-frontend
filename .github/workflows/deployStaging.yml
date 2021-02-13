@@ -17,7 +17,7 @@ jobs:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login
     - name: Build Docker image
-      run: docker build -f docker/Dockerfile.dev -t $APP_NAME .
+      run: docker build -f docker/Dockerfile.staging -t $APP_NAME .
     - name: Rename image and push image to Heroku Container Registry
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
