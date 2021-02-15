@@ -14,10 +14,28 @@ Web application using gamification strategies for the AlumnUSB NGO. It seeks to 
 
 ## Instructions
 
-- On the root foler where `Dockerfile` file is located, run the following command:
+- On the root folder where `Dockerfile` file is located, run the following command:
 
 ```
 $ docker-compose up
 ```
 
 - Finally check if the server is running on the docker container by directing http://localhost:4200/ in your browser.
+
+## Run App locally
+
+- On the root folder where `package.json` file is located, run the following command:
+
+```
+$ npm install
+```
+
+This will start to download and install all the dependencies to run the app.
+
+- Finally run the app with the following command:
+
+```
+$ npm start
+```
+
+And you will have running the application on http://localhost:4200/
