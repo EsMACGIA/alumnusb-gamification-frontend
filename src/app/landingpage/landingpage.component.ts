@@ -13,7 +13,7 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
 import { NbSpinnerService } from "@nebular/theme";
 import Chart from "chart.js";
 
@@ -29,8 +29,26 @@ export class LandingpageComponent implements OnInit, OnDestroy {
 
   constructor(private spinner$: NbSpinnerService) {}
 
+  @HostListener("window:scroll", ["$event"])
+  onWindowScroll(e) {
+    if (window.pageYOffset > 100) {
+      var element = document.getElementById("navbar-top");
+      if (element) {
+        element.classList.remove("navbar-transparent");
+        element.classList.add("bg-danger");
+      }
+    } else {
+      var element = document.getElementById("navbar-top");
+      if (element) {
+        element.classList.add("navbar-transparent");
+        element.classList.remove("bg-danger");
+      }
+    }
+  }
+
   ngOnInit() {
     this.spinner$.load();
+    this.onWindowScroll(event);
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
 
