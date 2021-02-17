@@ -8,7 +8,7 @@ describe('LandingpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LandingPageComponent ]
+      declarations: [ LandingPageComponent ],
     })
     .compileComponents();
   });

@@ -13,14 +13,14 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
-import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
-import { NbSpinnerService } from "@nebular/theme";
-import Chart from "chart.js";
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { NbSpinnerService } from '@nebular/theme';
+import Chart from 'chart.js';
 
 @Component({
   selector: 'ngx-landingpage',
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss']
+  styleUrls: ['./landing-page.component.scss'],
 })
 
 export class LandingPageComponent implements OnInit, OnDestroy {
@@ -29,18 +29,18 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   constructor(private spinner$: NbSpinnerService) {}
 
-  @HostListener("window:scroll", ["$event"])
+  @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     // To change header dinamically add .add/.remove(bg-*)
     if (window.pageYOffset > 100) {
-      var element = document.getElementById("navbar-top");
+      let element = document.getElementById('navbar-top');
       if (element) {
-        element.classList.remove("navbar-transparent");
+        element.classList.remove('navbar-transparent');
       }
     } else {
-      var element = document.getElementById("navbar-top");
+      let element = document.getElementById('navbar-top');
       if (element) {
-        element.classList.add("navbar-transparent");
+        element.classList.add('navbar-transparent');
       }
     }
   }
@@ -48,68 +48,68 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.spinner$.load();
     this.onWindowScroll(event);
-    var body = document.getElementsByTagName("body")[0];
-    body.classList.add("landing-page");
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.add('landing-page');
 
-    var canvas: any = document.getElementById("chartBig");
-    var ctx = canvas.getContext("2d");
-    var gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
-    gradientFill.addColorStop(0, "rgba(228, 76, 196, 0.0)");
-    gradientFill.addColorStop(1, "rgba(228, 76, 196, 0.14)");
-    var chartBig = new Chart(ctx, {
-      type: "line",
+    let canvas: any = document.getElementById('chartBig');
+    let ctx = canvas.getContext('2d');
+    let gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
+    gradientFill.addColorStop(0, 'rgba(228, 76, 196, 0.0)');
+    gradientFill.addColorStop(1, 'rgba(228, 76, 196, 0.14)');
+    let chartBig = new Chart(ctx, {
+      type: 'line',
       responsive: true,
       data: {
         labels: [
-          "JUN",
-          "FEB",
-          "MAR",
-          "APR",
-          "MAY",
-          "JUN",
-          "JUL",
-          "AUG",
-          "SEP",
-          "OCT",
-          "NOV",
-          "DEC"
+          'JUN',
+          'FEB',
+          'MAR',
+          'APR',
+          'MAY',
+          'JUN',
+          'JUL',
+          'AUG',
+          'SEP',
+          'OCT',
+          'NOV',
+          'DEC',
         ],
         datasets: [
           {
-            label: "Data",
+            label: 'Data',
             fill: true,
             backgroundColor: gradientFill,
-            borderColor: "#e44cc4",
+            borderColor: '#e44cc4',
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            pointBackgroundColor: "#e44cc4",
-            pointBorderColor: "rgba(255,255,255,0)",
-            pointHoverBackgroundColor: "#be55ed",
-            //pointHoverBorderColor:'rgba(35,46,55,1)',
+            pointBackgroundColor: '#e44cc4',
+            pointBorderColor: 'rgba(255,255,255,0)',
+            pointHoverBackgroundColor: '#be55ed',
+            // pointHoverBorderColor:'rgba(35,46,55,1)',
             pointBorderWidth: 20,
             pointHoverRadius: 4,
             pointHoverBorderWidth: 15,
             pointRadius: 4,
-            data: [80, 160, 200, 160, 250, 280, 220, 190, 200, 250, 290, 320]
-          }
-        ]
+            data: [80, 160, 200, 160, 250, 280, 220, 190, 200, 250, 290, 320],
+          },
+        ],
       },
       options: {
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: false,
         },
 
         tooltips: {
-          backgroundColor: "#fff",
-          titleFontColor: "#ccc",
-          bodyFontColor: "#666",
+          backgroundColor: '#fff',
+          titleFontColor: '#ccc',
+          bodyFontColor: '#666',
           bodySpacing: 4,
           xPadding: 12,
-          mode: "nearest",
+          mode: 'nearest',
           intersect: 0,
-          position: "nearest"
+          position: 'nearest',
         },
         responsive: true,
         scales: {
@@ -118,17 +118,17 @@ export class LandingPageComponent implements OnInit, OnDestroy {
               barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
-                color: "rgba(0,0,0,0.0)",
-                zeroLineColor: "transparent"
+                color: 'rgba(0,0,0,0.0)',
+                zeroLineColor: 'transparent',
               },
               ticks: {
                 display: false,
                 suggestedMin: 0,
                 suggestedMax: 350,
                 padding: 20,
-                fontColor: "#9a9a9a"
-              }
-            }
+                fontColor: '#9a9a9a',
+              },
+            },
           ],
 
           xAxes: [
@@ -136,23 +136,23 @@ export class LandingPageComponent implements OnInit, OnDestroy {
               barPercentage: 1.6,
               gridLines: {
                 drawBorder: false,
-                color: "rgba(0,0,0,0)",
-                zeroLineColor: "transparent"
+                color: 'rgba(0,0,0,0)',
+                zeroLineColor: 'transparent',
               },
               ticks: {
                 padding: 20,
-                fontColor: "#9a9a9a"
-              }
-            }
-          ]
-        }
-      }
+                fontColor: '#9a9a9a',
+              },
+            },
+          ],
+        },
+      },
     });
 
   }
   ngOnDestroy() {
     this.alive = false;
-    var body = document.getElementsByTagName("body")[0];
-    body.classList.remove("landing-page");
+    let body = document.getElementsByTagName('body')[0];
+    body.classList.remove('landing-page');
   }
 }
