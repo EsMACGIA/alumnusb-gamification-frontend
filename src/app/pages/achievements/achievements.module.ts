@@ -10,7 +10,6 @@ import { AchievementsComponent } from './achievements.component';
 import { AchievementsService } from './achievements.service';
 
 @NgModule({
-
     imports: [
       NbCardModule,
       NbListModule,

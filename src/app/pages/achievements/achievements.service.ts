@@ -8,4 +8,5 @@ export class AchievementsService extends BaseService {
     getAchievements(id): Observable<any> {
         return this.getBase('accounts/achievements/' + id, this.setHeaders());
     }
+
 }

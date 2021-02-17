@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AchievementsModel } from './Achievements.model';
-
+import { AchievementsModel } from './achievements.model';
 
 @Component({
   selector: 'ngx-achievements',
@@ -12,9 +11,10 @@ export class AchievementsComponent {
   achievements = new AchievementsModel();
 
   constructor() {
-      this.achievements = this.data;
-    }
+    this.achievements = this.data;
+  }
 
+  // Dummy data
   data = {
     achieved: [
       {

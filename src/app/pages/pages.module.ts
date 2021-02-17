@@ -10,7 +10,6 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatsModule } from './stats/stats.module';
 import { AchievementsModule } from './achievements/achievements.module';
 
-
 @NgModule({
   imports: [
     PagesRoutingModule,
