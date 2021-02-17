@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { StatsModel } from './stats.model';
 import { StatsService } from './stats.service';
 
-
 @Component({
   selector: 'ngx-stats',
   templateUrl: './stats.component.html',
@@ -18,14 +17,15 @@ export class StatsComponent {
     private statsService: StatsService,
     ) {
       this.userId = Number(localStorage.getItem('userId'));
-      this.getData(this.userId);
+      this.getUserStats(this.userId);
   }
 
-  getData(id) {
+  getUserStats(id) {
     this.statsService.getStats(id).subscribe(data => {
       if (data) {
         this.stats = data;
       }
     });
   }
+
 }

@@ -8,4 +8,5 @@ export class StatsService extends BaseService {
     getStats(id): Observable<any> {
         return this.getBase('accounts/stats/' + id, this.setHeaders());
     }
+
 }
