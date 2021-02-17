@@ -3,6 +3,7 @@ import { NbCardModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { StatsComponent } from './stats.component';
+import { StatsService } from './stats.service';
 
 @NgModule({
 
@@ -12,6 +13,9 @@ import { StatsComponent } from './stats.component';
     ],
     declarations: [
       StatsComponent,
+    ],
+    providers: [
+      StatsService,
     ],
 })
 

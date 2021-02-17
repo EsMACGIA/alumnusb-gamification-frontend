@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
 
-
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
@@ -32,16 +31,22 @@ export class NgxLoginComponent extends NbLoginComponent {
   }
 
   auth(user) {
-    this.authService.login(user).subscribe(data => {
-      if (data) {
-        if (data.token) {
-          localStorage.setItem('currentToken', data.token);
-          this.router.navigate(['/']);
-        } else if (data.error) {
-          this.showToast('danger', 'Hubo un error al iniciar sesión', '');
+    this.authService.login(user).subscribe(
+      data => {
+        if (data) {
+          if (data.token) {
+            localStorage.setItem('currentToken', data.token);
+            localStorage.setItem('userId', data.user_id);
+            this.router.navigate(['/']);
+          } else if (data.error) {
+            this.showToast('danger', 'Hubo un error al iniciar sesión', '');
+          }
         }
-      }
-    });
+      },
+      err => {
+        this.showToast('danger', 'hubo un error, intente de nuevo', '');
+      },
+    );
   }
 
   private showToast(type: NbComponentStatus, title: string, body: string) {

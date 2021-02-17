@@ -112,7 +112,7 @@ export class BaseService {
             headers: new HttpHeaders(
                 {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('currentToken')}`,
+                    'Authorization': `JWT ${localStorage.getItem('currentToken')}`,
                 },
             ),
         };
