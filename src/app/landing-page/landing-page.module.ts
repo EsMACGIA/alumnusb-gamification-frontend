@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 
 // Components
 
-import { LandingpageRoutingModule } from './landingpage-routing.module';
-import { LandingpageComponent } from './landingpage.component';
+import { LandingPageRoutingModule } from './landing-page-routing.module';
+import { LandingPageComponent } from './landing-page.component';
 
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { RouterModule } from '@angular/router';
@@ -13,11 +13,11 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule,
     CollapseModule.forRoot(),
-    LandingpageRoutingModule,
+    LandingPageRoutingModule,
 
   ],
   declarations: [
-    LandingpageComponent,
+    LandingPageComponent,
   ],
 })
 export class LandingPageModule {

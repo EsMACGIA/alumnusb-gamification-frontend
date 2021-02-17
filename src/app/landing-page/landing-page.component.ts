@@ -19,11 +19,11 @@ import Chart from "chart.js";
 
 @Component({
   selector: 'ngx-landingpage',
-  templateUrl: './landingpage.component.html',
-  styleUrls: ['./landingpage.component.scss']
+  templateUrl: './landing-page.component.html',
+  styleUrls: ['./landing-page.component.scss']
 })
 
-export class LandingpageComponent implements OnInit, OnDestroy {
+export class LandingPageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   private alive = true;
 
@@ -31,17 +31,16 @@ export class LandingpageComponent implements OnInit, OnDestroy {
 
   @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
+    // To change header dinamically add .add/.remove(bg-*)
     if (window.pageYOffset > 100) {
       var element = document.getElementById("navbar-top");
       if (element) {
         element.classList.remove("navbar-transparent");
-        // element.classList.add("bg-white");
       }
     } else {
       var element = document.getElementById("navbar-top");
       if (element) {
         element.classList.add("navbar-transparent");
-        // element.classList.remove("bg-white");
       }
     }
   }
