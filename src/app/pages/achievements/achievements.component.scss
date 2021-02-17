@@ -1,0 +1,26 @@
+.list-card {
+  
+  .achievement {
+    width: 100%;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      background: #00d68f;
+    }
+
+    .date {
+      color: white;
+    }
+
+    .not_achieve_header {
+      background: #ff3d71;
+    }
+
+    .body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<div class="lists row">
+
+  <div class="accordion-container col-md-12 col-lg-6 col-xxxl-6">
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Conseguidos
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card class="list-card" size="giant">
+            <nb-list>
+              <nb-list-item *ngFor="let achievement of achievements.achieved">
+                <nb-card class="achievement">
+                  <nb-card-header class="header">
+                    <div>{{ achievement.achievement }}</div>
+                    <div class="date">{{ achievement.date | date }}</div>
+                  </nb-card-header>
+                  <nb-card-body class="body">
+                    <div>{{ achievement.description }}</div>
+                    <img src="http://alumnusb-gamification.herokuapp.com/static/achiev_img/nro_don_diamante_bBi4z7q.png" width="70" />
+                  </nb-card-body>
+                </nb-card>
+              </nb-list-item>
+            </nb-list>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+  </div>
+  <div class="accordion-container col-md-12 col-lg-6 col-xxxl-6">
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          Por Conseguir
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card class="list-card" size="giant">
+              <nb-list>
+                <nb-list-item *ngFor="let achievement of achievements.not_achieved">
+                  <nb-card class="achievement">
+                    <nb-card-header class="not_achieve_header">
+                      {{ achievement.achievement }}
+                    </nb-card-header>
+                    <nb-card-body  class="body">
+                      <div>{{ achievement.description }}</div>
+                      <img src="http://alumnusb-gamification.herokuapp.com/static/achiev_img/nro_don_diamante_bBi4z7q.png" width="70" />
+                    </nb-card-body>
+                  </nb-card>
+                </nb-list-item>
+              </nb-list>
+            </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+    </nb-accordion>
+  </div>
+</div>

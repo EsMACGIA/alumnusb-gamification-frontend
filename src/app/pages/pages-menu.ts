@@ -9,7 +9,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Logros',
     icon: 'award-outline',
-    link: '/',
+    link: '/pages/my_achievements',
   },
   {
     title: 'Estadísticas',
