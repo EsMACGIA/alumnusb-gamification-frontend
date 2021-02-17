@@ -33,12 +33,12 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   onWindowScroll(e) {
     // To change header dinamically add .add/.remove(bg-*)
     if (window.pageYOffset > 100) {
-      let element = document.getElementById('navbar-top');
+      const element = document.getElementById('navbar-top');
       if (element) {
         element.classList.remove('navbar-transparent');
       }
     } else {
-      let element = document.getElementById('navbar-top');
+      const element = document.getElementById('navbar-top');
       if (element) {
         element.classList.add('navbar-transparent');
       }
@@ -48,15 +48,15 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.spinner$.load();
     this.onWindowScroll(event);
-    let body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     body.classList.add('landing-page');
 
-    let canvas: any = document.getElementById('chartBig');
-    let ctx = canvas.getContext('2d');
-    let gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
+    const canvas: any = document.getElementById('chartBig');
+    const ctx = canvas.getContext('2d');
+    const gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
     gradientFill.addColorStop(0, 'rgba(228, 76, 196, 0.0)');
     gradientFill.addColorStop(1, 'rgba(228, 76, 196, 0.14)');
-    let chartBig = new Chart(ctx, {
+    const chartBig = new Chart(ctx, {
       type: 'line',
       responsive: true,
       data: {
@@ -152,7 +152,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.alive = false;
-    let body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     body.classList.remove('landing-page');
   }
 }
