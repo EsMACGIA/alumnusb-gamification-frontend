@@ -1,5 +1,7 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
 export const routes: Routes = [
   {
     path: 'pages',
@@ -10,6 +12,11 @@ export const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module')
       .then(m => m.NgxAuthModule),
+  },
+  {
+    path: 'landing-page',
+    loadChildren: () => import('./landing-page/landing-page.module')
+    .then(m => m.LandingPageModule),
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
