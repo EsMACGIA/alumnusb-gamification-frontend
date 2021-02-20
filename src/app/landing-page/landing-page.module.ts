@@ -8,6 +8,7 @@ import { LandingPageComponent } from './landing-page.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { RouterModule } from '@angular/router';
 
+import { AuthService } from '../auth/auth.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import { RouterModule } from '@angular/router';
   declarations: [
     LandingPageComponent,
   ],
+  providers: [
+    AuthService,
+  ]
 })
 export class LandingPageModule {
 }

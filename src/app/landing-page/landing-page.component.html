@@ -27,7 +27,7 @@
         placement="bottom"
         tooltip="Designed and Coded by Creative Tim"
       >
-        <span> BLK• </span> Design System Angular
+        <span> ALUMNUSB </span>
       </a>
       <button
         aria-controls="navigation-index"
@@ -67,51 +67,40 @@
         </div>
       </div>
       <ul class="navbar-nav">
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://twitter.com/CreativeTim"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Twitter"
-          >
-            <i class="fab fa-twitter"> </i>
-            <p class="d-lg-none d-xl-none">Twitter</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.facebook.com/CreativeTim"
-            placement="bottom"
-            target="_blank"
-            tooltip="Like us on Facebook"
-          >
-            <i class="fab fa-facebook-square"> </i>
-            <p class="d-lg-none d-xl-none">Facebook</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/CreativeTimOfficial"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Instagram"
-          >
-            <i class="fab fa-instagram"> </i>
-            <p class="d-lg-none d-xl-none">Instagram</p>
-          </a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']"> Back to Kit </a>
+          <!-- <a class="nav-link" [routerLink]="['/pages']"> Back to Kit </a> -->
+          <div class="dropdown" dropdown>
+            <button aria-expanded="false" aria-haspopup="true" class="btn bn-info dropdown-toggle" data-toggle="dropdown" dropdowntoggle id="dropdownMenuButton" type="button">
+              MiNombre
+            </button>
+            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu" *dropdownMenu>
+              <a class="dropdown-item" [routerLink]="['/pages/my_stats']">
+                Estadísticas
+              </a>
+              <a class="dropdown-item" [routerLink]="['/pages/my_achievements']">
+                Logros
+              </a>
+              <a class="dropdown-item" [routerLink]="['/pages']">
+                Mi perfil
+              </a>
+              <a class="dropdown-item" (click)="authService.logout()">
+                Cerrar Sesión
+              </a>
+            </div>
+          </div>
         </li>
+        
         <li class="nav-item">
           <a
             class="nav-link"
-            href="https://github.com/creativetimofficial/blk-design-system-angular/issues"
+            [routerLink]="['/auth/login']"
           >
-            Have an issue?
+            Iniciar Sesión
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="authService.logout()">
+            Cerrar Sesión
           </a>
         </li>
       </ul>

@@ -5,7 +5,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginModel } from './models/login.model';
 import { RegisterModel } from './models/register.model';
 
-
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
