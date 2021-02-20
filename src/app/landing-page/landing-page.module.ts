@@ -22,7 +22,7 @@ import { AuthService } from '../auth/auth.service';
   ],
   providers: [
     AuthService,
-  ]
+  ],
 })
 export class LandingPageModule {
 }

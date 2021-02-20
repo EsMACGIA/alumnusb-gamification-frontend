@@ -11,7 +11,8 @@
 
 =========================================================
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
  */
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { NbSpinnerService } from '@nebular/theme';
@@ -31,7 +32,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private spinner$: NbSpinnerService,
-    public authService: AuthService
+    public authService: AuthService,
   ) {}
 
   @HostListener('window:scroll', ['$event'])
