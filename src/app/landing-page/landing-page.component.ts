@@ -11,11 +11,14 @@
 
 =========================================================
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
  */
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { NbSpinnerService } from '@nebular/theme';
 import Chart from 'chart.js';
+
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'ngx-landingpage',
@@ -27,7 +30,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   private alive = true;
 
-  constructor(private spinner$: NbSpinnerService) {}
+  constructor(
+    private spinner$: NbSpinnerService,
+    public authService: AuthService,
+  ) {}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {

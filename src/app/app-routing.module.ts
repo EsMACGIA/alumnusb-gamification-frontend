@@ -14,11 +14,11 @@ export const routes: Routes = [
       .then(m => m.NgxAuthModule),
   },
   {
-    path: 'landing-page',
+    path: '',
     loadChildren: () => import('./landing-page/landing-page.module')
     .then(m => m.LandingPageModule),
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
+  { path: 'pages', redirectTo: 'pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 
