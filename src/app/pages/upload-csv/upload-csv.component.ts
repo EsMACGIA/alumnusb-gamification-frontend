@@ -14,4 +14,7 @@ export class UploadCsvComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  uploadCsvFile() {
+    return;
+  }
 }

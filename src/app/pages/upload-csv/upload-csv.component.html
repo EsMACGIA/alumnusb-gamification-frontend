@@ -11,19 +11,17 @@
         </nb-card-body>
       </nb-card>
     </div>
-  
-    <div class="col-lg-6">
-      <nb-card size="small">
-        <nb-card-header>Upload New CSV</nb-card-header>
-        <nb-card-body>
-          <p>Please remember the file must be in proper CSV format<br/><br/></p>
-          <button nbButton status="success" nbPopover="Hello, how are you today?">Upload</button>
-  
-          <!-- <button nbButton nbPopover="Popover!" nbPopoverTrigger="hint">
-            show hint
-          </button> -->
-        </nb-card-body>
-      </nb-card>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <nb-card>
+          <nb-card-header>Upload New CSV</nb-card-header>
+          <nb-card-body>
+            <p>Please remember the file must be in proper CSV format<br/><br/></p>
+            <input (click)="uploadCsvFile()" nbButton status="info" type="submit" value="Upload"/>
+          </nb-card-body>
+        </nb-card>
+      </div>
     </div>
   </div>
   
