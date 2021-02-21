@@ -10,18 +10,19 @@ import { ProfileService } from './profile.service'
 export class ProfileComponent {
 
   profileData = new ProfileModel();
-  id = 7;
+  id: number;
 
   constructor(
     private profileService: ProfileService) {
-    
+    this.id = Number(localStorage.getItem('userId'));
     this.getData();
   }
 
   getData() {
     this.profileService.getProfile(this.id).subscribe(data => {
       if (data) {
-        console.log(data)
+        console.log(data);
+        this.profileData = data;
       }
     })
   }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbButtonModule } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { ProfileComponent } from './profile.component';
@@ -9,6 +9,7 @@ import { ProfileService } from './profile.service';
 
     imports: [
       NbCardModule,
+      NbButtonModule,
       ThemeModule,
     ],
     declarations: [

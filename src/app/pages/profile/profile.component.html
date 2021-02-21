@@ -1,0 +1,116 @@
+<div class="profile-header">
+    <h1>Perfil</h1>
+    <button nbButton status="info">
+        <i class="fas fa-edit" style="margin-right: 5px;"></i> Editar perfil
+    </button>
+</div>
+<nb-card>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="https://cdn.discordapp.com/attachments/654426406268305465/812833723330330654/Euox_ynXAAcLq3S.png"/>
+                    <div class="file btn btn-lg btn-primary h-100 mb-5">Cambiar imagen.</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        {{ profileData.first_name }}
+                        {{ profileData.middle_name }}
+                        {{ profileData.last_name }}
+                    </h5>
+                    <h6>{{ profileData.undergrad_degree }}</h6>
+                    <p *ngIf="profileData.donor">
+                        Donante <i class="fas fa-star" style="color: #f9cf00;"></i>
+                    </p>
+                    <p *ngIf="profileData.usb_alumn">
+                        Alumno USB <i class="fas fa-star" style="color: #f9cf00;"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <strong>Redes Sociales:</strong>
+                    <ul>
+                        <li>Twitter: @{{ profileData.twitter_account }}</li>
+                        <li>Instagram: @{{ profileData.instagram_account }}</li>
+                    </ul>
+                    <strong>Informacion de contacto:</strong>
+                    <ul>
+                        <li>Ciudad: {{ profileData.mailing_city }}</li>
+                        <li>Estado: {{ profileData.mailing_state }}</li>
+                        <li>País: {{ profileData.mailing_country }}</li>
+                        <li>Número telefónico: {{ profileData.mobile }}</li>
+                        <li>Correo: {{ profileData.email }}</li>
+                        <li>Correo trabajo: {{ profileData.work_email }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-personal">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Fecha de nacimiento:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.birthdate | date}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Cohorte:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.cohorte }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Carnet:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.carnet }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Campus de pregrado:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.usb_undergrad_campus }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Postgrado:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.graduate_degree }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Campus de postgrado:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.graduate_campus }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Trabajo:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{ profileData.workplace }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>
