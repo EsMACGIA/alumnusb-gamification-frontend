@@ -22,6 +22,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'pie-chart-outline',
     link: '/pages/my_stats',
   },
+  {
+    title: 'Upload CSV',
+    link: '/pages/upload-csv',
+    icon: 'pie-chart-outline',
+  },
   // {
   //   title: 'E-commerce',
   //   icon: 'shopping-cart-outline',

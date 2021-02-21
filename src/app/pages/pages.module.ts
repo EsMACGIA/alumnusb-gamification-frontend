@@ -9,6 +9,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatsModule } from './stats/stats.module';
 import { AchievementsModule } from './achievements/achievements.module';
+import { UploadCsvModule } from './upload-csv/upload-csv.module';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { AchievementsModule } from './achievements/achievements.module';
     MiscellaneousModule,
     StatsModule,
     AchievementsModule,
+    UploadCsvModule,
   ],
   declarations: [
     PagesComponent,

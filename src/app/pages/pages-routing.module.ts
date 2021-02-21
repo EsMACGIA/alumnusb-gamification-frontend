@@ -7,6 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { StatsComponent } from './stats/stats.component';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { UploadCsvComponent } from './upload-csv/upload-csv.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,6 +20,10 @@ const routes: Routes = [{
     {
       path: 'my_stats',
       component: StatsComponent,
+    },
+    {
+      path: 'upload-csv',
+      component: UploadCsvComponent,
     },
     {
       path: 'dashboard',
