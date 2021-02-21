@@ -116,16 +116,27 @@
 @import "assets/blk/scss/blk-design-system/angular/datepicker";
 @import "assets/blk/scss/blk-design-system/angular/example-pages";
 
+footer.footer{
+  background: #f9cf00 !important;
+  border-top-color: #f9cf00;
+  .btn-social i{
+    font-size: 30px !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+  }
+  
+  .btn-social a{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 25px !important;
+  }
 
-.btn-social i{
-  font-size: 30px !important; 
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center;
-}
-
-.btn-social a{
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 25px !important;
+  h3, p, i{
+    color: black !important;
+  }
+  
+  a{
+    border-color: black !important;
+  }
 }
