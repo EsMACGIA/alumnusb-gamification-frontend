@@ -115,3 +115,17 @@
 @import "assets/blk/scss/blk-design-system/angular/alerts";
 @import "assets/blk/scss/blk-design-system/angular/datepicker";
 @import "assets/blk/scss/blk-design-system/angular/example-pages";
+
+
+.btn-social i{
+  font-size: 30px !important; 
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+}
+
+.btn-social a{
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 25px !important;
+}
