@@ -2,35 +2,36 @@
 @import '~@nebular/theme/styles/global/breakpoints';
 @import '~bootstrap/scss/mixins/breakpoints';
 
-::ng-deep{
-  nb-layout-footer nav{ 
+::ng-deep {
+
+  nb-layout-footer nav { 
     background-color: #f9cf00 !important;
   }
 }
+
 @include nb-install-component() {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  .created-by{
+
+  .created-by {
     color: black !important;     
   }
 
-  
   .socials {
     font-size: 2rem;
 
     a {
       padding: 0.4rem;
-      // color: nb-theme(text-hint-color);
       color: black !important;
       transition: color ease-out 0.1s;
       border-color: black !important;
       padding: 25px !important;
       margin-left: 5px;
       margin-right: 5px;
-      i{
+
+      i {
         font-size: 30px !important; 
         display: flex !important;
         justify-content: center !important;
@@ -41,10 +42,10 @@
         color: nb-theme(text-basic-color);
       }
     }
-    
   }
 
   @include media-breakpoint-down(is) {
+    
     .socials {
       font-size: 1.5rem;
     }
