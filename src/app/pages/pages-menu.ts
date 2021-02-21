@@ -5,12 +5,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'home',
     icon: 'person-outline',
     link: '/',
+    home: true,
   },
   {
     title: 'Perfil',
     icon: 'person-outline',
-    link: '/pages/profile',
-    home: true,
+    link: '/pages/my_profile',
   },
   {
     title: 'Logros',

@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { ProfileModel } from './profile.model';
 
 @Injectable()
-export class ProfileService extends BaseService{
+export class ProfileService extends BaseService {
 
-    getProfile(id): Observable<any>{
+    getProfile(id): Observable<any> {
         return this.getBase('accounts/profiles/' + id, this.setHeaders());
     }
 

@@ -16,7 +16,7 @@ import { ProfileService } from './profile.service';
       ProfileComponent,
     ],
     providers: [
-      ProfileService
+      ProfileService,
     ],
 })
 

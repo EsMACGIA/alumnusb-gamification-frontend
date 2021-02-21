@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProfileModel } from './profile.model';
-import { ProfileService } from './profile.service'
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'ngx-profile',
@@ -21,9 +21,8 @@ export class ProfileComponent {
   getData() {
     this.profileService.getProfile(this.id).subscribe(data => {
       if (data) {
-        console.log(data);
         this.profileData = data;
       }
-    })
+    });
   }
 }
