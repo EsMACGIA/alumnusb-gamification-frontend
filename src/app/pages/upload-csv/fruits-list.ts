@@ -32,5 +32,5 @@ export const fruits: string[] = [
   'Instagram Account',
   'First Gift Date',
   'Last Gift Date',
-  'Total Number of Gifts'
+  'Total Number of Gifts',
 ];
