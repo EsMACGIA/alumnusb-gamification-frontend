@@ -29,4 +29,15 @@ export class AuthService extends BaseService {
     localStorage.removeItem('currentToken');
     localStorage.removeItem('userId');
   }
+
+  isAuthenticated(){
+    return localStorage.getItem('currentToken') != null;
+  }
+
+  getUserInfo(){
+    return {
+      userId: localStorage.getItem('userId'),
+      currentToken: localStorage.getItem('currentToken')
+    }
+  }
 }

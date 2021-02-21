@@ -91,13 +91,18 @@
         
         <li class="nav-item">
           <a class="nav-link"
-            [routerLink]="['/auth/login']"
+            [routerLink]="['/auth/login']" *ngIf="!isAuthenticated"
           >
             Iniciar Sesión
           </a>
+          <a class="nav-link"
+          [routerLink]="['/auth/register']" *ngIf="!isAuthenticated"
+        >
+          Registrarse
+        </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="authService.logout()">
+          <a class="nav-link" (click)="authService.logout()" *ngIf="isAuthenticated">
             Cerrar Sesión
           </a>
         </li>
