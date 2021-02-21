@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../../app.base.service';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
 
 // @Injectable()
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   }) 
 export class UploadCsvService extends BaseService {
 
+    httpOptions;
     // Returns an observable 
     uploadCsv(file):Observable<any> { 
     
@@ -21,6 +22,8 @@ export class UploadCsvService extends BaseService {
         // Make http post request over api 
         // with formData as req 
         console.log(formData)
-        return this.postBase(formData, 'csv/upload-csv/');
+        this.httpOptions = {
+        };
+        return this.postBase(formData, 'csv/upload-csv/',this.httpOptions);
     } 
 }
