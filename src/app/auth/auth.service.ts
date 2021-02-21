@@ -5,20 +5,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { LoginModel } from './models/login.model';
 import { RegisterModel } from './models/register.model';
 
-
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService extends BaseService {
-  // public currentUserSubject: BehaviorSubject<any>;
-  public currentUser: Observable<any>;
+  public userId: number;
 
   constructor(
     http: HttpClient,
     ) {
       super(http);
-      // this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
-      // this.currentUser = this.currentUserSubject.asObservable();
+      this.userId = Number(localStorage.getItem('userId'));
   }
 
   login(login: LoginModel): Observable<any> {
@@ -30,6 +27,6 @@ export class AuthService extends BaseService {
 
   logout() {
     localStorage.removeItem('currentToken');
-    // localStorage.removeItem('currentUser');
+    localStorage.removeItem('userId');
   }
 }

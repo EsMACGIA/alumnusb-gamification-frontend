@@ -9,7 +9,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatsModule } from './stats/stats.module';
 import { ProfileModule } from './profile/profile.module';
-
+import { AchievementsModule } from './achievements/achievements.module';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { ProfileModule } from './profile/profile.module';
     MiscellaneousModule,
     ProfileModule,
     StatsModule,
-    
+    AchievementsModule,
   ],
   declarations: [
     PagesComponent,
