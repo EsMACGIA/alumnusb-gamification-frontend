@@ -68,21 +68,21 @@
       </div>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <div class="dropdown" dropdown>
-            <button aria-expanded="false" aria-haspopup="true" class="btn bn-info dropdown-toggle" data-toggle="dropdown" dropdowntoggle id="dropdownMenuButton" type="button">
+          <div class="dropdown">
+            <button aria-expanded="false" aria-haspopup="true" class="btn bn-info dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" type="button">
               MiNombre
             </button>
-            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu" *dropdownMenu>
-              <a class="dropdown-item" [routerLink]="['/pages/my_stats']">
+            <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_stats']">
                 Estadísticas
               </a>
-              <a class="dropdown-item" [routerLink]="['/pages/my_achievements']">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_achievements']">
                 Logros
               </a>
-              <a class="dropdown-item" [routerLink]="['/pages']">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages']">
                 Mi perfil
               </a>
-              <a class="dropdown-item" (click)="authService.logout()">
+              <a class="dropdown-item text-dark" (click)="authService.logout()">
                 Cerrar Sesión
               </a>
             </div>
