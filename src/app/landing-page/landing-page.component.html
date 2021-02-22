@@ -68,7 +68,7 @@
       </div>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <div class="dropdown">
+          <div class="dropdown" *ngIf="isAuthenticated">
             <button aria-expanded="false" aria-haspopup="true" class="btn bn-info dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" type="button">
               MiNombre
             </button>
@@ -82,22 +82,24 @@
               <a class="dropdown-item text-dark" [routerLink]="['/pages']">
                 Mi perfil
               </a>
-              <a class="dropdown-item text-dark" (click)="authService.logout()">
-                Cerrar Sesión
-              </a>
             </div>
           </div>
         </li>
         
         <li class="nav-item">
           <a class="nav-link"
-            [routerLink]="['/auth/login']"
+            [routerLink]="['/auth/login']" *ngIf="!isAuthenticated"
           >
             Iniciar Sesión
           </a>
+          <a class="nav-link"
+          [routerLink]="['/auth/register']" *ngIf="!isAuthenticated"
+        >
+          Registrarse
+        </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="authService.logout()">
+          <a class="nav-link" (click)="logout()" *ngIf="isAuthenticated" style="cursor: pointer;">
             Cerrar Sesión
           </a>
         </li>
