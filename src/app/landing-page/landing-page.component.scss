@@ -116,6 +116,9 @@
 @import "assets/blk/scss/blk-design-system/angular/datepicker";
 @import "assets/blk/scss/blk-design-system/angular/example-pages";
 
+html{
+  scroll-behavior: smooth !important;
+}
 footer.footer {
   background: #f9cf00 !important;
   border-top-color: #f9cf00;
@@ -154,6 +157,10 @@ footer.footer {
   }
   .navbar-collapse {
     background: #f9a200;
+    width: 40%;
+    @media (max-width: 991px) {
+      width: 95%
+    }
   }
   .dropdown-item {
     @media (max-width: 991px) {
@@ -166,6 +173,12 @@ footer.footer {
     @media (max-width: 991px) {
       background: black !important;
       color: white;
+    }
+  }
+  .links-header a{
+    color: white !important;
+    @media (max-width: 991px) {
+      display: none;
     }
   }
 }
@@ -242,6 +255,7 @@ footer.footer {
 }
 .achievements {
   padding: 70px 0;
+  scroll-behavior: smooth !important;
   .title {
     color: #f9a200 !important;
     font-size: 3rem;

@@ -65,6 +65,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     body.classList.remove('landing-page');
   }
 
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
+
   logout() {
     this.authService.logout();
     window.location.reload();
