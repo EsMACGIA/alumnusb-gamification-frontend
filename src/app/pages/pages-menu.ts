@@ -2,25 +2,20 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'home',
-    icon: 'person-outline',
-    link: '/',
-  },
-  {
     title: 'Perfil',
     icon: 'person-outline',
     link: '/pages/my_profile',
     home: true,
   },
   {
-    title: 'Logros',
-    icon: 'award-outline',
-    link: '/pages/my_achievements',
-  },
-  {
     title: 'Estadísticas',
     icon: 'pie-chart-outline',
     link: '/pages/my_stats',
+  },
+  {
+    title: 'Logros',
+    icon: 'award-outline',
+    link: '/pages/my_achievements',
   },
   {
     title: 'Cargar CSV',
@@ -248,18 +243,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //     },
   //   ],
   // },
-  {
-    title: 'Auth',
-    icon: 'lock-outline',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
+  // {
+  //   title: 'Auth',
+  //   icon: 'lock-outline',
+  //   children: [
+  //     {
+  //       title: 'Login',
+  //       link: '/auth/login',
+  //     },
+  //     {
+  //       title: 'Register',
+  //       link: '/auth/register',
+  //     },
       // {
       //   title: 'Request Password',
       //   link: '/auth/request-password',
@@ -268,6 +263,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       //   title: 'Reset Password',
       //   link: '/auth/reset-password',
       // },
-    ],
-  },
+    // ],
+  // },
 ];
