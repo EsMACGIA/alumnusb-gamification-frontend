@@ -14,9 +14,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */ -->
 
+  <!-- NAVBAR -->
 <nav
-  class="navbar navbar-expand-lg fixed-top navbar-transparent bg-white"
-  color-on-scroll="100"
+  class="navbar navbar-expand-lg navbar-transparent fixed-top"
   id="navbar-top"
 >
   <div class="container">
@@ -50,7 +50,7 @@
     >
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="col-6 collapse-brand"><a> BLK• </a></div>
+          <div class="col-6 collapse-brand"><a> ALUMNUSB </a></div>
           <div class="col-6 collapse-close text-right">
             <button
               aria-controls="navigation-index"
@@ -106,244 +106,186 @@
   </div>
 </nav>
 <div class="wrapper">
-  <div class="page-header bg-white">
-
-    <div class="content-center">
-      <div
-        class="row row-grid justify-content-between align-items-center text-left"
-      >
-        <div class="col-lg-6 col-md-6">
-          <h1 class="text-dark">
-            We keep your coin <br />
-
-            <span class="text-dark"> secured </span>
-          </h1>
-          <p class="text-dark mb-3">
-            A wonderful serenity has taken possession of my entire soul, like
-            these sweet mornings of spring which I enjoy with my whole heart. I
-            am alone, and feel...
-          </p>
-          <div class="btn-wrapper mb-3">
-            <p class="category text-success d-inline mr-1">From 9.99%/mo</p>
-            <a
-              class="btn btn-success btn-link btn-sm"
-              href="javascript:void(0)"
-            >
-              <i class="tim-icons icon-minimal-right"> </i>
-            </a>
+  <!-- HEADER -->
+  <section class="section section-lg header">
+    <div class="content-center container d-flex align-items-center flex-column">
+      <img src="/assets/images/header/alumnusb_logo.jpg" alt="logo" />
+      <h1 class="text-center text-white title">LA USB AGRADECE TU COLABORACIÓN</h1>
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+      <h4 class="subtitle">
+        Queremos reconocer lo mucho que haces por nosotros. ¡Entra para descubrir cómo!
+      </h4>
+      <div class="buttons">
+        <button [routerLink]="['/auth/login']">
+          Ingresar
+        </button>
+        <button [routerLink]="['/auth/register']">
+          Registrarme
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- ACHIEVEMENTS -->
+  <section class="section section-lg bg-white portfolio achievements">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <h1 class="text-center text-dark title">LO QUE HEMOS CONSEGUIDO</h1>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-line"></div>
           </div>
-          <div class="btn-wrapper">
-            <div class="button-container">
-              <button
-                class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
-                href="javascript:void(0)"
-              >
-                <i class="fab fa-twitter"> </i>
-              </button>
-              <button
-                class="btn btn-icon btn-simple btn-round btn-neutral mr-1"
-                href="javascript:void(0)"
-              >
-                <i class="fab fa-dribbble"> </i>
-              </button>
-              <button
-                class="btn btn-icon btn-simple btn-round btn-neutral"
-                href="javascript:void(0)"
-              >
-                <i class="fab fa-facebook"> </i>
-              </button>
+          <div class="row row-grid justify-content-center">
+            <div class="col-lg-4 col-md-6 card-container">
+              <div class="portfolio-item mx-auto card border-0 h-100">
+                <div class="rounded p-2 text-whie card-body h-100 custom-card" data-toggle="modal" data-target="#achievement1">
+                  <img class="img-fluid rounded" alt="achievement1" src="/assets/images/achievements/achievement1.jpg"/>
+                  <h4 class="text-white">Recuperación del transporte</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 card-container">
+              <div class="portfolio-item mx-auto card border-0 h-100">
+                <div class="rounded p-2 text-whie card-body h-100 custom-card" data-toggle="modal" data-target="#achievement2">
+                  <img class="img-fluid rounded" alt="achievement2" src="/assets/images/achievements/achievement2.jpg"/>
+                  <h4 class="text-white">Premio a la destacada labor docente</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 card-container">
+              <div class="portfolio-item mx-auto card border-0 h-100">
+                <div class="rounded p-2 text-whie card-body h-100 custom-card" data-toggle="modal" data-target="#achievement3">
+                  <img class="img-fluid rounded" alt="achievement3" src="/assets/images/achievements/achievement3.jpg"/>
+                  <h4 class="text-white">Programa de becas</h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-5">
-          <img
-            alt="Circle image"
-            class="img-fluid"
-            src="assets/blk/img/etherum.png"
-          />
+      </div>
+    </div>
+  </section>
+  <!-- MODALS -->
+  <div class="modal fade" id="achievement1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">TRANSPORTE RECUPERADO</h5>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-line"></div>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body d-flex align-items-center flex-column">
+          <img src="/assets/images/achievements/achievement1.jpg">
+          <p>
+            Gracias a tu apoyo, ha sido posible habilitar muchas rutas del transporte,
+            permitiendo que muchos miembros de la comunidad universitaria puedan seguir
+            haciendo vida en nuestra casa de estudios.
+          </p>
         </div>
       </div>
     </div>
   </div>
-  <section class="section section-lg bg-white">
-    <section class="section">
-      <img class="path" src="assets/blk/img/path4.png" />
-
-      <div class="container">
-        <div class="row row-grid justify-content-between">
-          <div class="col-md-5 mt-lg-5">
-            <div class="row">
-              <div class="col-lg-6 col-sm-12 px-2 py-2">
-                <div class="card card-stats">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                          <i class="tim-icons icon-trophy text-warning"> </i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-md-8">
-                        <div class="numbers">
-                          <p class="card-title">3,237</p>
-                          <p></p>
-                          <p class="card-category">Awards</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-sm-12 px-2 py-2">
-                <div class="card card-stats upper bg-default">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                          <i class="tim-icons icon-coins text-dark"> </i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-md-8">
-                        <div class="numbers">
-                          <p class="card-title">3,653</p>
-                          <p></p>
-                          <p class="card-category">Commits</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div class="modal fade" id="achievement2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">PREMIO A LA DESTACADA LABOR DOCENTE</h5>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon">
+              <i class="fas fa-star"></i>
             </div>
-            <div class="row">
-              <div class="col-lg-6 col-sm-12 px-2 py-2">
-                <div class="card card-stats">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                          <i class="tim-icons icon-gift-2 text-info"> </i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-md-8">
-                        <div class="numbers">
-                          <p class="card-title">593</p>
-                          <p></p>
-                          <p class="card-category">Presents</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 col-sm-12 px-2 py-2">
-                <div class="card card-stats">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5 col-md-4">
-                        <div class="icon-big text-center icon-warning">
-                          <i class="tim-icons icon-credit-card text-success">
-                          </i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-md-8">
-                        <div class="numbers">
-                          <p class="card-title">10,783</p>
-                          <p></p>
-                          <p class="card-category">Forks</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="divider-line"></div>
           </div>
-          <div class="col-md-6">
-            <div class="pl-md-5">
-              <h1 class="text-dark">
-                Large <br />
-
-                Achivements
-              </h1>
-              <p class="text-dark">
-                I should be capable of drawing a single stroke at the present
-                moment; and yet I feel that I never was a greater artist than
-                now.
-              </p>
-              <br />
-
-              <p class="text-dark">
-                When, while the lovely valley teems with vapour around me, and
-                the meridian sun strikes the upper surface of the impenetrable
-                foliage of my trees, and but a few stray.
-              </p>
-              <br />
-
-              <a
-                class="font-weight-bold text-info mt-5"
-                href="javascript:void(0)"
-              >
-                Show all <i class="tim-icons icon-minimal-right text-info"> </i>
-              </a>
-            </div>
-          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body d-flex align-items-center flex-column">
+          <img src="/assets/images/achievements/achievement2.jpg">
+          <p>
+            Gracias a tu colaboración, ha sido posible mantener la figura del premio a
+            la destacada labor docente, de esta forma retribuímos a los profesores que
+            han ayudado a construir nuestra universidad y formar tantos profesionales.
+          </p>
         </div>
       </div>
-    </section>
-  </section>
-  <section class="section section-lg bg-white">
-    <img class="path" src="assets/blk/img/path4.png" />
-
-    <img class="path2" src="assets/blk/img/path5.png" />
-
-    <img class="path3" src="assets/blk/img/path2.png" />
-
+    </div>
+  </div>
+  <div class="modal fade" id="achievement3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">PROGRAMA DE BECAS</h5>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-line"></div>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body d-flex align-items-center flex-column">
+          <img src="/assets/images/achievements/achievement3.jpg">
+          <p>
+            Gracias a tus aportes, hemos sido capaces de mantener el programa de becas
+            y permitir que mucha gente talentosa pueda desarrollarse y seguir estudiando.
+            ¡Muchas gracias!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="section section-lg gratitude">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12">
-          <h1 class="text-center text-dark">Your best benefit</h1>
-          <div class="row row-grid justify-content-center">
-            <div class="col-lg-3">
-              <div class="info">
-                <div class="icon icon-primary">
-                  <i class="tim-icons icon-money-coins"> </i>
-                </div>
-                <h4 class="info-title text-dark">Low Commission</h4>
-                <hr class="line-primary" />
-
-                <p class="text-dark">
-                  Divide details about your work into parts. Write a few lines
-                  about each one. A paragraph describing a feature will.
+          <h1 class="text-center text-white title">¡AGRADECEMOS TU APOYO!</h1>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-line"></div>
+          </div>
+          <div class="row row-grid justify-content-center content">
+            <div class="col-lg-4">
+              <div class="custom-info">
+                <p class="text-white">
+                  Este proyecto es una iniciativa de AlumnUSB en conjunto con siete estudiantes
+                  de Ingeniería de la Computación de la Universidad Simón Bolívar. Se trata de
+                  una interfaz con estrategias de Gamification para reconocer los logros de los
+                  aportes realizados por cada egresado a su alma mater.
                 </p>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="info">
-                <div class="icon icon-warning">
-                  <i class="tim-icons icon-chart-pie-36"> </i>
-                </div>
-                <h4 class="info-title text-dark">High Incomes</h4>
-                <hr class="line-warning" />
-
-                <p class="text-dark">
-                  Divide details about your product or agency work into parts.
-                  Write a few lines about each one. A paragraph describing
-                  feature will be a feature.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="info">
-                <div class="icon icon-success">
-                  <i class="tim-icons icon-single-02"> </i>
-                </div>
-                <h4 class="info-title text-dark">Verified People</h4>
-                <hr class="line-success" />
-
-                <p class="text-dark">
-                  Divide details about your product or agency work into parts.
-                  Write a few lines about each one. A paragraph describing be
-                  enough.
+            <div class="col-lg-4">
+              <div class="custom-info">
+                <p class="text-white">
+                  Se busca dar más significado personal para cada proceso dentro de los proyectos
+                  de AlumnUSB en la Universidad. Es por ello que nuestra interfaz cuenta con un
+                  sistema de medallas que se irán desbloqueando al cumplir ciertos requisitos
+                  para cada donante recurrente.
                 </p>
               </div>
             </div>
@@ -352,204 +294,7 @@
       </div>
     </div>
   </section>
-  <section class="section section-lg section-safe bg-white">
-    <img class="path" src="assets/blk/img/path5.png" />
-
-    <div class="container">
-      <div class="row row-grid justify-content-between">
-        <div class="col-md-5">
-          <img class="img-fluid floating" src="assets/blk/img/chester-wade.jpg" />
-
-          <div class="card card-stats bg-danger">
-            <div class="card-body">
-              <div class="justify-content-center">
-                <div class="numbers">
-                  <p class="card-title">100%</p>
-                  <p class="card-category text-dark">Safe</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card card-stats bg-info">
-            <div class="card-body">
-              <div class="justify-content-center">
-                <div class="numbers">
-                  <p class="card-title">573 K</p>
-                  <p class="card-category text-dark">Satisfied customers</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card card-stats bg-default">
-            <div class="card-body">
-              <div class="justify-content-center">
-                <div class="numbers">
-                  <p class="card-title">10 425</p>
-                  <p class="card-category text-dark">Business</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="px-md-5">
-            <hr class="line-success" />
-
-            <h3 class="text-dark">Awesome features</h3>
-            <p class="text-dark">
-              The design system comes with three pre-built pages to help you get
-              started faster. You can change the text and images and you're good
-              to go.
-            </p>
-            <ul class="list-unstyled mt-5">
-              <li class="py-2">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-success mb-2">
-                    <i class="tim-icons icon-vector"> </i>
-                  </div>
-                  <div class="ml-3"><h6 class="text-dark">Carefully crafted components</h6></div>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-success mb-2">
-                    <i class="tim-icons icon-tap-02"> </i>
-                  </div>
-                  <div class="ml-3"><h6 class="text-dark">Amazing page examples</h6></div>
-                </div>
-              </li>
-              <li class="py-2">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-success mb-2">
-                    <i class="tim-icons icon-single-02"> </i>
-                  </div>
-                  <div class="ml-3"><h6 class="text-dark">Super friendly support team</h6></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-lg bg-white">
-    <img class="path" src="assets/blk/img/path4.png" />
-
-    <img class="path2" src="assets/blk/img/path2.png" />
-
-    <div class="col-md-12">
-      <div class="card card-chart card-plain">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-sm-6 text-left">
-              <hr class="line-primary" />
-
-              <h5 class="card-category text-dark">Total Investments</h5>
-              <h2 class="card-title text-dark">Performance</h2>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="chart-area"><canvas id="chartBig"> </canvas></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section section-lg section-coins bg-white">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <hr class="line-info" />
-
-          <h1 class="text-dark">
-            Choose the coin
-            <span class="text-info"> that fits your needs </span>
-          </h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card card-coin card-plain">
-            <div class="card-header">
-              <img class="img-center img-fluid" src="assets/blk/img/bitcoin.png" />
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase text-dark">Light Coin</h4>
-                  <span> Plan </span>
-                  <hr class="line-primary" />
-                </div>
-              </div>
-              <div class="row">
-                <ul class="list-group">
-                  <li class="list-group-item text-dark">50 messages</li>
-                  <li class="list-group-item text-dark">100 emails</li>
-                  <li class="list-group-item text-dark">24/7 Support</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-footer text-center">
-              <button class="btn btn-primary btn-simple">Get plan</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-coin card-plain">
-            <div class="card-header">
-              <img class="img-center img-fluid" src="assets/blk/img/etherum.png" />
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase text-dark">Dark Coin</h4>
-                  <span> Plan </span>
-                  <hr class="line-warning" />
-                </div>
-              </div>
-              <div class="row">
-                <ul class="list-group">
-                  <li class="list-group-item text-dark">150 messages</li>
-                  <li class="list-group-item text-dark">1000 emails</li>
-                  <li class="list-group-item text-dark">24/7 Support</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-footer text-center">
-              <button class="btn btn-warning btn-simple">Get plan</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-coin card-plain">
-            <div class="card-header">
-              <img class="img-center img-fluid" src="assets/blk/img/ripp.png" />
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase text-dark">Bright Coin</h4>
-                  <span> Plan </span>
-                  <hr class="line-info" />
-                </div>
-              </div>
-              <div class="row">
-                <ul class="list-group">
-                  <li class="list-group-item text-dark">350 messages</li>
-                  <li class="list-group-item text-dark">10K emails</li>
-                  <li class="list-group-item text-dark">24/7 Support</li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-footer text-center">
-              <button class="btn btn-info btn-simple">Get plan</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="row">
