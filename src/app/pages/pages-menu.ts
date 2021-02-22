@@ -8,14 +8,14 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Logros',
-    icon: 'award-outline',
-    link: '/pages/my_achievements',
-  },
-  {
     title: 'Estadísticas',
     icon: 'pie-chart-outline',
     link: '/pages/my_stats',
+  },
+  {
+    title: 'Logros',
+    icon: 'award-outline',
+    link: '/pages/my_achievements',
   },
   {
     title: 'Cargar CSV',

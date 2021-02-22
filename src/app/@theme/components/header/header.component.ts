@@ -74,11 +74,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
-    
+
     this.menuService.onItemClick().subscribe((event) => {
       if (event.item.title === 'Cerrar sesión') {
         this.authService.logout();
-        this.router.navigate([''])
+        this.router.navigate(['']);
       }
     });
   }
