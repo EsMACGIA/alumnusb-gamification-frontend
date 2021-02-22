@@ -17,7 +17,7 @@ export class PagesComponent {
   menu = MENU_USUARIO;
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
   ) {
 
 
