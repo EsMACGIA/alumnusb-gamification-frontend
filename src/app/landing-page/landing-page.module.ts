@@ -9,9 +9,11 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { RouterModule } from '@angular/router';
 
 import { AuthService } from '../auth/auth.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
+    CommonModule,
     RouterModule,
     CollapseModule.forRoot(),
     LandingPageRoutingModule,
