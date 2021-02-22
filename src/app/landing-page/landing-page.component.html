@@ -76,7 +76,7 @@
         <li class="nav-item d-flex align-items-center" *ngIf="isAuthenticated">
           <div class="dropdown">
             <button aria-expanded="false" aria-haspopup="true" class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" type="button">
-              MiNombre
+              {{user.username}}
             </button>
             <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
               <a class="dropdown-item text-dark" [routerLink]="['/pages/my_profile']">
@@ -86,7 +86,7 @@
                 Estadísticas
               </a>
               <a class="dropdown-item text-dark" [routerLink]="['/pages/my_achievements']">
-                Logros
+                Mis Logros
               </a>
             </div>
           </div>
@@ -119,7 +119,7 @@
   <!-- HEADER -->
   <section class="section section-lg header">
     <div class="content-center container d-flex align-items-center flex-column">
-      <img src="/assets/images/header/alumnusb_logo.jpg" alt="logo" />
+      <img src="assets/images/header/alumnusb_logo.jpg" alt="logo"/>
       <h1 class="text-center text-white title">LA USB AGRADECE TU COLABORACIÓN</h1>
       <div class="divider">
         <div class="divider-line"></div>
@@ -158,7 +158,7 @@
             <div class="col-lg-4 col-md-6 card-container">
               <div class="portfolio-item mx-auto card border-0 h-100">
                 <div class="rounded p-2 text-whie card-body h-100 custom-card" data-toggle="modal" data-target="#achievement1">
-                  <img class="img-fluid rounded" alt="achievement1" src="/assets/images/achievements/achievement1.jpg"/>
+                  <img class="img-fluid rounded" alt="achievement1" src="assets/images/achievements/achievement1.jpg"/>
                   <h4 class="text-white">Recuperación del transporte</h4>
                 </div>
               </div>
@@ -166,7 +166,7 @@
             <div class="col-lg-4 col-md-6 card-container">
               <div class="portfolio-item mx-auto card border-0 h-100">
                 <div class="rounded p-2 text-whie card-body h-100 custom-card" data-toggle="modal" data-target="#achievement2">
-                  <img class="img-fluid rounded" alt="achievement2" src="/assets/images/achievements/achievement2.jpg"/>
+                  <img class="img-fluid rounded" alt="achievement2" src="assets/images/achievements/achievement2.jpg"/>
                   <h4 class="text-white">Premio a la destacada labor docente</h4>
                 </div>
               </div>
@@ -174,7 +174,7 @@
             <div class="col-lg-4 col-md-6 card-container">
               <div class="portfolio-item mx-auto card border-0 h-100">
                 <div class="rounded p-2 text-whie card-body h-100 custom-card" data-toggle="modal" data-target="#achievement3">
-                  <img class="img-fluid rounded" alt="achievement3" src="/assets/images/achievements/achievement3.jpg"/>
+                  <img class="img-fluid rounded" alt="achievement3" src="assets/images/achievements/achievement3.jpg"/>
                   <h4 class="text-white">Programa de becas</h4>
                 </div>
               </div>
@@ -202,7 +202,7 @@
           </button>
         </div>
         <div class="modal-body d-flex align-items-center flex-column">
-          <img src="/assets/images/achievements/achievement1.jpg">
+          <img src="assets/images/achievements/achievement1.jpg">
           <p>
             Gracias a tu apoyo, ha sido posible habilitar muchas rutas del transporte,
             permitiendo que muchos miembros de la comunidad universitaria puedan seguir
@@ -229,7 +229,7 @@
           </button>
         </div>
         <div class="modal-body d-flex align-items-center flex-column">
-          <img src="/assets/images/achievements/achievement2.jpg">
+          <img src="assets/images/achievements/achievement2.jpg">
           <p>
             Gracias a tu colaboración, ha sido posible mantener la figura del premio a
             la destacada labor docente, de esta forma retribuímos a los profesores que
@@ -256,7 +256,7 @@
           </button>
         </div>
         <div class="modal-body d-flex align-items-center flex-column">
-          <img src="/assets/images/achievements/achievement3.jpg">
+          <img src="assets/images/achievements/achievement3.jpg">
           <p>
             Gracias a tus aportes, hemos sido capaces de mantener el programa de becas
             y permitir que mucha gente talentosa pueda desarrollarse y seguir estudiando.
