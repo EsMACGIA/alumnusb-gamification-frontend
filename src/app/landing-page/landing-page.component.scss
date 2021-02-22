@@ -121,7 +121,7 @@ footer.footer {
   border-top-color: #f9cf00;
 
   .btn-social i {
-    font-size: 30px !important; 
+    font-size: 30px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center;
@@ -133,11 +133,241 @@ footer.footer {
     padding: 25px !important;
   }
 
-  h3, p, i {
+  h3,
+  p,
+  i {
     color: black !important;
   }
-  
+
   a {
     border-color: black !important;
+  }
+}
+.navbar {
+  background: black !important;
+  &.navbar-transparent {
+    background: black !important;
+  }
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .navbar-collapse {
+    background: #f9a200;
+  }
+  .dropdown-item {
+    @media (max-width: 991px) {
+      color: white !important;
+    }
+  }
+  .btn {
+    background: #f9a200 !important;
+    color: black;
+    @media (max-width: 991px) {
+      background: black !important;
+      color: white;
+    }
+  }
+}
+.header {
+  background: no-repeat url(/assets/images/header/USB.jpg);
+  background-size: cover;
+  height: auto;
+  .container {
+    border: solid 3px white;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    margin-top: 90px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    height: auto;
+    padding: 16px;
+    img {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+    }
+    .title {
+      font-size: 3rem;
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    .divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 100%;
+      .divider-line {
+        background: white;
+        height: 4px;
+        max-width: 7rem;
+        width: 100%;
+      }
+      .divider-icon {
+        color: white;
+        margin: 0 16px;
+        font-size: 30px;
+      }
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      color: white;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin: 15px 0;
+      button {
+        margin: 0 5%;
+        background: none;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: solid 2px white;
+        font-size: 1.5rem;
+        color: white;
+        padding: 12px;
+        outline: none;
+        transition: 0.3s;
+        &:hover {
+          color: black;
+          background: white;
+        }
+      }
+    }
+  }
+}
+.achievements {
+  padding: 70px 0;
+  .title {
+    color: #f9a200 !important;
+    font-size: 3rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  .divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    .divider-line {
+      background: #f9a200;
+      height: 4px;
+      max-width: 7rem;
+      width: 100%;
+    }
+    .divider-icon {
+      color: #f9a200;
+      margin: 0 16px;
+      font-size: 30px;
+    }
+  }
+  .card-container {
+    margin-bottom: 10px;
+    .card {
+      border-radius: 0.5rem !important;
+      .custom-card {
+        background: #f9a200;
+        cursor: pointer;
+        h4 {
+          margin-top: 10px;
+          font-size: 1.5rem;
+          font-weight: 400;
+          text-align: center;
+        }
+        .rounded {
+          border-radius: 0.5rem !important;
+        }
+        transition: 0.3s;
+        &:hover {
+          background: #f9cf00;
+        }
+      }
+      .rounded {
+        border-radius: 0.5rem !important;
+      }
+    }
+  }
+}
+.modal {
+  overflow: scroll;
+  .modal-dialog {
+    transform: translate(0, 5%) !important;
+    .modal-header {
+      display: block;
+      .modal-title {
+        text-align: center;
+        color: #f9a200 !important;
+        font-size: 3rem;
+        width: 85%;
+        margin: 0 auto;
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+    }
+    .modal-body {
+      p {
+        text-align: justify;
+        margin: 15px 20px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    .divider-line {
+      background: #f9a200;
+      height: 4px;
+      max-width: 7rem;
+      width: 100%;
+    }
+    .divider-icon {
+      color: #f9a200;
+      margin: 0 16px;
+      font-size: 30px;
+    }
+  }
+}
+.gratitude {
+  background: #f9a200;
+  padding: 70px 0 !important;
+  .title {
+    font-size: 3rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  .divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    .divider-line {
+      background: white;
+      height: 4px;
+      max-width: 7rem;
+      width: 100%;
+    }
+    .divider-icon {
+      color: white;
+      margin: 0 16px;
+      font-size: 30px;
+    }
+  }
+  .content {
+    margin-bottom: 20px 0;
+    .custom-info {
+      padding: 0;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
   }
 }
