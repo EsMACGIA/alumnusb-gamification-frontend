@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AchievementsModel } from './achievements.model';
 
 @Component({
@@ -6,9 +6,11 @@ import { AchievementsModel } from './achievements.model';
   templateUrl: './achievements.component.html',
   styleUrls: ['./achievements.component.scss'],
 })
-export class AchievementsComponent {
+export class AchievementsComponent{
   userId: Number;
   achievements = new AchievementsModel();
+  @ViewChild('achieved', { static: true }) achieved;
+  @ViewChild('toGet', { static: true }) toGet;
 
   constructor() {
     this.achievements = this.data;
