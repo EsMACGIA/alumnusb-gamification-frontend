@@ -65,7 +65,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     body.classList.remove('landing-page');
   }
 
-  logout(){
+  logout() {
     this.authService.logout();
     window.location.reload();
   }

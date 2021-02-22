@@ -1,0 +1,24 @@
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .list-card {
+    nb-card-header {
+      border-bottom: none;
+    }
+
+    nb-card-body {
+      padding: 0;
+    }
+  }
+}
+
+.browse-button{
+  margin-right: 10px;
+  @media (max-width: 428px) {
+    margin-bottom: 18px;
+   }
+}
+
+input[type="file"] {
+  display: none;
+}

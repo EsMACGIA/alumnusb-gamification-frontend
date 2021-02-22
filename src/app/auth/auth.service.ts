@@ -33,17 +33,17 @@ export class AuthService extends BaseService {
     localStorage.removeItem('isAdmin');
   }
 
-  isAuthenticated(){
+  isAuthenticated() {
     return localStorage.getItem('currentToken') != null;
   }
 
-  getUserInfo(){
+  getUserInfo() {
     return {
       userId: localStorage.getItem('userId'),
       currentToken: localStorage.getItem('currentToken'),
       email: localStorage.getItem('email'),
       isAdmin: localStorage.getItem('isAdmin'),
-      username: localStorage.getItem('username')
-    }
+      username: localStorage.getItem('username'),
+    };
   }
 }
