@@ -116,7 +116,7 @@
 @import "assets/blk/scss/blk-design-system/angular/datepicker";
 @import "assets/blk/scss/blk-design-system/angular/example-pages";
 
-html{
+html {
   scroll-behavior: smooth !important;
 }
 footer.footer {
@@ -159,7 +159,7 @@ footer.footer {
     background: #f9a200;
     width: 40%;
     @media (max-width: 991px) {
-      width: 95%
+      width: 95%;
     }
   }
   .dropdown-item {
@@ -175,7 +175,7 @@ footer.footer {
       color: white;
     }
   }
-  .links-header a{
+  .links-header a {
     color: white !important;
     @media (max-width: 991px) {
       display: none;
