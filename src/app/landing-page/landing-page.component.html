@@ -142,12 +142,17 @@
           Registrarme
         </button>
       </div>
-      <div class="buttons" *ngIf="isAuthenticated">
+      <div class="buttons" *ngIf="isAuthenticated && !isAdmin">
         <button [routerLink]="['/pages/my_stats']">
           Ver Mis Estadísticas
         </button>
         <button [routerLink]="['/pages/my_achievements']">
           Ver Mis Logros
+        </button>
+      </div>
+      <div class="buttons" *ngIf="isAuthenticated && isAdmin">
+        <button [routerLink]="['/pages/csv-upload]">
+          Cargar CSV
         </button>
       </div>
     </div>
