@@ -155,6 +155,19 @@ footer.footer {
   .navbar-collapse {
     background: #f9a200;
   }
+  .dropdown-item {
+    @media (max-width: 991px) {
+      color: white !important;
+    }
+  }
+  .btn {
+    background: #f9a200 !important;
+    color: black;
+    @media (max-width: 991px) {
+      background: black !important;
+      color: white;
+    }
+  }
 }
 .header {
   background: no-repeat url(/assets/images/header/USB.jpg);
