@@ -15,7 +15,7 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
-
+import { RouterModule } from '@angular/router';
 import {
   FooterComponent,
   HeaderComponent,
@@ -43,6 +43,7 @@ const NB_MODULES = [
   NbLayoutModule,
   NbMenuModule,
   NbUserModule,
+  RouterModule,
   NbActionsModule,
   NbSearchModule,
   NbSidebarModule,

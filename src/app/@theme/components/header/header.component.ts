@@ -4,7 +4,10 @@ import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeServ
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'ngx-header',
@@ -38,14 +41,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
+  userMenu = [ { title: 'Cerrar sesión' } ];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private router: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -69,6 +74,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+    
+    this.menuService.onItemClick().subscribe((event) => {
+      if (event.item.title === 'Cerrar sesión') {
+        this.authService.logout();
+        this.router.navigate([''])
+      }
+    });
   }
 
   ngOnDestroy() {
