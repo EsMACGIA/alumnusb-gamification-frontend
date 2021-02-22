@@ -8,7 +8,9 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatsModule } from './stats/stats.module';
+import { ProfileModule } from './profile/profile.module';
 import { AchievementsModule } from './achievements/achievements.module';
+import { UploadCsvModule } from './upload-csv/upload-csv.module';
 
 @NgModule({
   imports: [
@@ -18,8 +20,10 @@ import { AchievementsModule } from './achievements/achievements.module';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    ProfileModule,
     StatsModule,
     AchievementsModule,
+    UploadCsvModule,
   ],
   declarations: [
     PagesComponent,

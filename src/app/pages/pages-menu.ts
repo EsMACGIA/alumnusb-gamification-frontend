@@ -4,7 +4,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Perfil',
     icon: 'person-outline',
-    link: '/pages/profile',
+    link: '/pages/my_profile',
     home: true,
   },
   {
@@ -16,6 +16,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Estadísticas',
     icon: 'pie-chart-outline',
     link: '/pages/my_stats',
+  },
+  {
+    title: 'Cargar CSV',
+    icon: 'upload',
+    link: '/pages/upload-csv',
   },
   // {
   //   title: 'E-commerce',
