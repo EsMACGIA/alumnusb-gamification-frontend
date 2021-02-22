@@ -11,8 +11,6 @@ import { AchievementsService } from './achievements.service';
 export class AchievementsComponent implements OnInit{
   userId: Number;
   achievements = new AchievementsModel();
-  @ViewChild('achieved', { static: true }) achieved;
-  @ViewChild('toGet', { static: true }) toGet;
 
   constructor(
     private achievementsService: AchievementsService,
