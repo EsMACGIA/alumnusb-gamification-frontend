@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import { MENU_ITEMS } from './pages-menu';
+import { AuthService } from '../auth/auth.service';
+import { MENU_ADMIN, MENU_USUARIO } from './pages-menu';
 
 @Component({
   selector: 'ngx-pages',
@@ -14,5 +14,18 @@ import { MENU_ITEMS } from './pages-menu';
 })
 export class PagesComponent {
 
-  menu = MENU_ITEMS;
+  menu = MENU_USUARIO;
+
+  constructor(
+    private auth: AuthService,
+  ) {
+
+
+    if (this.auth.isAdmin()) {
+      this.menu = MENU_ADMIN;
+    } else {
+      this.menu = MENU_USUARIO;
+    }
+
+  }
 }

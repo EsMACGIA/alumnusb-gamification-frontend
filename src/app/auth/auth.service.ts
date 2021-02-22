@@ -37,6 +37,10 @@ export class AuthService extends BaseService {
     return localStorage.getItem('currentToken') != null;
   }
 
+  isAdmin() {
+    return localStorage.getItem('isAdmin') == 'true';
+  }
+
   getUserInfo() {
     return {
       userId: localStorage.getItem('userId'),
