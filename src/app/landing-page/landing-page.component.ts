@@ -30,6 +30,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   private alive = true;
   isAuthenticated: boolean = false;
+  user: any;
 
   constructor(
     private spinner$: NbSpinnerService,
@@ -57,6 +58,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     this.onWindowScroll(event);
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('landing-page');
+    this.user = this.authService.getUserInfo();
     this.isAuthenticated = this.authService.isAuthenticated();
   }
   ngOnDestroy() {
