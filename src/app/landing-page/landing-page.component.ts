@@ -156,11 +156,15 @@ export class LandingPageComponent implements OnInit, OnDestroy {
       },
     });
     this.isAuthenticated = this.authService.isAuthenticated();
-    console.log(this.isAuthenticated)
   }
   ngOnDestroy() {
     this.alive = false;
     const body = document.getElementsByTagName('body')[0];
     body.classList.remove('landing-page');
+  }
+
+  logout(){
+    this.authService.logout();
+    window.location.reload();
   }
 }
