@@ -28,6 +28,9 @@ export class AuthService extends BaseService {
   logout() {
     localStorage.removeItem('currentToken');
     localStorage.removeItem('userId');
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
+    localStorage.removeItem('isAdmin');
   }
 
   isAuthenticated(){
