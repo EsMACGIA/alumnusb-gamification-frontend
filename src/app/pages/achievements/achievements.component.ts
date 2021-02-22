@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { AchievementsModel } from './achievements.model';
 import { AchievementsService } from './achievements.service';
+import { medals } from '../../../assets/data/medals';
 
 @Component({
   selector: 'ngx-achievements',
@@ -11,7 +12,8 @@ import { AchievementsService } from './achievements.service';
 export class AchievementsComponent implements OnInit{
   userId: Number;
   achievements = new AchievementsModel();
-
+  medals: any;
+  
   constructor(
     private achievementsService: AchievementsService,
     private authService: AuthService,
@@ -20,6 +22,7 @@ export class AchievementsComponent implements OnInit{
 
   ngOnInit(){
     this.loadAchievements();
+    this.medals = medals;
   }
 
   loadAchievements(){

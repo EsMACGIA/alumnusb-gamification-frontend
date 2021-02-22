@@ -27,7 +27,7 @@
           [routerLink]="['']"
           placement="bottom"
         >
-        ALUMNUSB
+        AlumnUSB
         </a>
         <ul class="d-flex mb-0 list-unstyled justify-content-around links-header w-100">
           <li><a href="https://alumnusb.org/" target="_blank">Página de AlumnUSB</a></li>
@@ -79,14 +79,17 @@
               {{user.username}}
             </button>
             <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
-              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_profile']">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_profile']" *ngIf="!isAdmin">
                 Mi perfil
               </a>
-              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_stats']">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_stats']" *ngIf="!isAdmin">
                 Estadísticas
               </a>
-              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_achievements']">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_achievements']" *ngIf="!isAdmin">
                 Mis Logros
+              </a>
+              <a class="dropdown-item text-dark" [routerLink]="['pages/upload-csv']" *ngIf="isAdmin">
+                Cargar CSV
               </a>
             </div>
           </div>
@@ -131,12 +134,25 @@
       <h4 class="subtitle">
         Queremos reconocer lo mucho que haces por nosotros. ¡Entra para descubrir cómo!
       </h4>
-      <div class="buttons">
+      <div class="buttons" *ngIf="!isAuthenticated">
         <button [routerLink]="['/auth/login']">
           Ingresar
         </button>
         <button [routerLink]="['/auth/register']">
           Registrarme
+        </button>
+      </div>
+      <div class="buttons" *ngIf="isAuthenticated && !isAdmin">
+        <button [routerLink]="['/pages/my_stats']">
+          Ver Mis Estadísticas
+        </button>
+        <button [routerLink]="['/pages/my_achievements']">
+          Ver Mis Logros
+        </button>
+      </div>
+      <div class="buttons" *ngIf="isAuthenticated && isAdmin">
+        <button [routerLink]="['pages/upload-csv']">
+          Cargar CSV
         </button>
       </div>
     </div>
