@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fruits } from './fruits-list';
+import { columns } from './columns-list';
 import { UploadCsvService } from './upload-csv.service';
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
 
@@ -9,7 +9,7 @@ import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalP
   styleUrls: ['./upload-csv.component.scss'],
 })
 export class UploadCsvComponent implements OnInit {
-  fruits = fruits;
+  columns = columns;
 
   file: File = null;
 

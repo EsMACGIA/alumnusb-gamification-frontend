@@ -23,9 +23,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/my_stats',
   },
   {
-    title: 'Upload CSV',
+    title: 'Cargar CSV',
+    icon: 'upload',
     link: '/pages/upload-csv',
-    icon: 'pie-chart-outline',
   },
   // {
   //   title: 'E-commerce',

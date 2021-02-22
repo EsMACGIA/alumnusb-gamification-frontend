@@ -4,8 +4,8 @@
         <nb-card-header>Orden de columnas del CSV</nb-card-header>
         <nb-card-body>
           <nb-list>
-            <nb-list-item *ngFor="let fruit of fruits">
-              {{ fruit }}
+            <nb-list-item *ngFor="let column of columns">
+              {{ column }}
             </nb-list-item>
           </nb-list>
         </nb-card-body>
@@ -13,7 +13,7 @@
     </div>
     <div class="col-lg-6">
       <nb-card>
-        <nb-card-header>Upload New CSV</nb-card-header>
+        <nb-card-header>Cargar nuevo CSV</nb-card-header>
         <nb-card-body>
           <p>Por favor recuerda que el archivo debe estar en formato CSV adecuadamente<br/><br/></p>
           <button class="browse-button" (click)="file.click()" nbButton status="primary" type="submit">Examinar...</button>

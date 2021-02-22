@@ -1,4 +1,4 @@
-export const fruits: string[] = [
+export const columns: string[] = [
   'Account ID',
   'First Name',
   'Middle Name',
