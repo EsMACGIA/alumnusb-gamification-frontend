@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/my_stats',
   },
   {
-    title: 'Logros',
+    title: 'Mis Logros',
     icon: 'award-outline',
     link: '/pages/my_achievements',
   },
