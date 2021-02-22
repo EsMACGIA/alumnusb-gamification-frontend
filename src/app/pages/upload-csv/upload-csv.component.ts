@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fruits } from './fruits-list';
-import { UploadCsvService } from './upload-csv.service'
+import { UploadCsvService } from './upload-csv.service';
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
 
 @Component({
@@ -20,32 +20,32 @@ export class UploadCsvComponent implements OnInit {
   preventDuplicates = false;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   index = 1;
-  
+
   ngOnInit(): void {
   }
 
-  onChange(event) { 
-    this.file = event.target.files[0]; 
-    document.getElementById('file-name').setAttribute("placeholder", this.file.name);
+  onChange(event) {
+    this.file = event.target.files[0];
+    document.getElementById('file-name').setAttribute('placeholder', this.file.name);
   }
 
   uploadCsvFile() {
-    if (this.file == null){
+    if (this.file == null) {
       this.showToast('warning', 'No se ha seleccionado ningun archivo', '');
       return;
     }
     this.showToast('primary', 'El archivo esta siendo cargado', '');
-        this.uploadCsvService.uploadCsv(this.file).subscribe( 
+        this.uploadCsvService.uploadCsv(this.file).subscribe(
           // On success
-            (event: any) => { 
-                if (typeof (event) === 'object') { 
+            (event: any) => {
+                if (typeof (event) === 'object') {
                     this.showToast('success', 'El archivo fue cargado exitosamente', '');
-                } 
-            } 
+                }
+            }
         // On error
-        ,  (event: any) => { 
+        ,  (event: any) => {
           this.showToast('danger', 'El archivo no pudo ser cargado', '');
-      } ); 
+      } );
   }
 
   private showToast(type: NbComponentStatus, title: string, body: string) {
