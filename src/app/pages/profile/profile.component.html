@@ -5,101 +5,22 @@
     </button>
 </div>
 <div class="row">
-    <div class="col-2"></div>
-    <nb-card class="col-md-3 list-card">
+    <nb-card class="col-md-5 list-card">
         <nb-card-body>
             <div class="profile-img">
-                <img src="https://cdn.discordapp.com/attachments/654426406268305465/812833723330330654/Euox_ynXAAcLq3S.png"/>
-                <button class="file" nbButton status="warning">Cambiar imagen.</button>
+                <img src="/assets/images/profile/1.png"/>
+                <button class="file" nbButton status="info">Cambiar imagen.</button>
             </div>
-            <nb-accordion multi>
-                <nb-accordion-item>
-                    <nb-accordion-item-header>
-                        Redes Sociales:
-                    </nb-accordion-item-header>
-                    <nb-accordion-item-body>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Twitter</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.twitter_account }}
-                            </div>
-                            <div class="col-6">
-                                <strong>Instagram</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.instagram_account }}
-                            </div>
-                        </div>
-                    </nb-accordion-item-body>
-                </nb-accordion-item>
-                <nb-accordion-item>
-                    <nb-accordion-item-header>
-                        Información de contacto:
-                    </nb-accordion-item-header>
-                    <nb-accordion-item-body>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Ciudad:</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.mailing_city }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Estado:</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.mailing_state }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>País:</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.mailing_country }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Teléfono:</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.mobile }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Correo:</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.email }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Correo trabajo:</strong>
-                            </div>
-                            <div class="col-6">
-                                {{ profileData.work_email }}
-                            </div>
-                        </div>
-                    </nb-accordion-item-body>
-                </nb-accordion-item>
-            </nb-accordion>
         </nb-card-body>
     </nb-card>
-    <nb-card class="col-md-4">
+    <nb-card class="col-md-7">
         <div class="profile-head">
             <h5>
                 {{ profileData.first_name }}
                 {{ profileData.middle_name }}
                 {{ profileData.last_name }}
             </h5>
-            <h6>{{ profileData.undergrad_degree }}</h6>
+            <h6 class="text-body">{{ profileData.undergrad_degree }}</h6>
             <p class="text-hint" *ngIf="profileData.donor">
                 Donante <i class="fas fa-star"></i>
             </p>
@@ -109,65 +30,131 @@
         </div>
         <nb-tabset>
             <nb-tab tabTitle="Sobre mi">
-                <div class="profile-personal">
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Fecha de nacimiento:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.birthdate | date}}</p>
-                        </div>
+                <div class="row profile-personal">
+                    <div class="col-6">
+                        <strong class="text-heading">Fecha de nacimiento:</strong>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Cohorte:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.cohorte }}</p>
-                        </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.birthdate | date}}</p>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Carnet:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.carnet }}</p>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Cohorte:</strong>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Campus de pregrado:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.usb_undergrad_campus }}</p>
-                        </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.cohorte }}</p>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Postgrado:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.graduate_degree }}</p>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Carnet:</strong>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Campus de postgrado:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.graduate_campus }}</p>
-                        </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.carnet }}</p>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <label>Trabajo:</label>
-                        </div>
-                        <div class="col-6">
-                            <p>{{ profileData.workplace }}</p>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Campus de pregrado:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.usb_undergrad_campus }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Postgrado:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.graduate_degree }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Campus de postgrado:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.graduate_campus }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Trabajo:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.workplace }}</p>
                     </div>
                 </div>
             </nb-tab>
-        </nb-tabset>
+            <nb-tab tabTitle="Redes Sociales">
+                <div class="row profile-personal">
+                    <div class="col-6">
+                        <strong class="text-heading">Twitter</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.twitter_account }}</p>
+                    </div>
+                </div>
+                <div class="row">        
+                    <div class="col-6">
+                        <strong class="text-heading">Instagram</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.instagram_account }}</p>
+                    </div>
+                </div>
+            </nb-tab>
+            <nb-tab tabTitle="Información de contacto">
+                <div class="row profile-personal">
+                    <div class="col-6">
+                        <strong class="text-heading">Ciudad:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.mailing_city }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Estado:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.mailing_state }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">País:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.mailing_country }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Teléfono:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.mobile }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Correo:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.email }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Correo trabajo:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.work_email }}</p>
+                    </div>
+                </div>
+            </nb-tab>
+            </nb-tabset>
     </nb-card>
 </div>
