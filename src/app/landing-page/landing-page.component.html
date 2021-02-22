@@ -131,12 +131,20 @@
       <h4 class="subtitle">
         Queremos reconocer lo mucho que haces por nosotros. ¡Entra para descubrir cómo!
       </h4>
-      <div class="buttons">
+      <div class="buttons" *ngIf="!isAuthenticated">
         <button [routerLink]="['/auth/login']">
           Ingresar
         </button>
         <button [routerLink]="['/auth/register']">
           Registrarme
+        </button>
+      </div>
+      <div class="buttons" *ngIf="isAuthenticated">
+        <button [routerLink]="['/pages/my_stats']">
+          Ver Mis Estadísticas
+        </button>
+        <button [routerLink]="['/pages/my_achievements']">
+          Ver Mis Logros
         </button>
       </div>
     </div>
