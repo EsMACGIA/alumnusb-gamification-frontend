@@ -11,3 +11,14 @@
     }
   }
 }
+
+.browse-button{
+  margin-right: 10px;
+  @media (max-width: 428px) {
+    margin-bottom: 18px;
+   }
+}
+
+input[type="file"] {
+  display: none;
+}

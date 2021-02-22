@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NbCardModule, NbListModule, NbButtonModule } from '@nebular/theme';
+import { NbCardModule, NbListModule, NbButtonModule, NbInputModule } from '@nebular/theme';
 
 // Components
 import { UploadCsvComponent } from './upload-csv.component';
@@ -14,6 +14,7 @@ import { ThemeModule } from '../../@theme/theme.module';
     ThemeModule,
     NbListModule,
     NbButtonModule,
+    NbInputModule,
     ReactiveFormsModule,
   ],
   declarations: [

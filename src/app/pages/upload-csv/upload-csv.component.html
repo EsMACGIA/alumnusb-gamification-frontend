@@ -11,27 +11,17 @@
         </nb-card-body>
       </nb-card>
     </div>
-    
-    <div class="row">
-      <div class="col-md-12">
-        <nb-card>
-          <nb-card-header>Upload New CSV</nb-card-header>
-          <nb-card-body>
-            <p>Please remember the file must be in proper CSV format<br/><br/></p>
-            <input class="form-control" type="file" 
-            (change)="onChange($event)"> 
-            <!-- <input class="form-control" type="file" 
-            (change)="onChange($event)" nbButton status="info" type="submit" value="Upload"><br/><br/> -->
-            <button (click)="uploadCsvFile()" nbButton status="info" type="submit">Upload</button>
-            <!-- <input (click)="uploadCsvFile()" nbButton status="info" type="submit" value="Upload"/><br/><br/>
-            <input (click)="uploadCsvFile()" type="file"/> -->
-          </nb-card-body>
-        </nb-card>
-        <!--Flag variable is used here-->
-        <div class="container" *ngIf="loading"> 
-          <h3>Loading ...</h3> 
-        </div> 
-      </div>
+    <div class="col-lg-6">
+      <nb-card>
+        <nb-card-header>Upload New CSV</nb-card-header>
+        <nb-card-body>
+          <p>Por favor recuerda que el archivo debe estar en formato CSV adecuadamente<br/><br/></p>
+          <button class="browse-button" (click)="file.click()" nbButton status="primary" type="submit">Examinar...</button>
+          <input id="file-name" type="text" nbInput placeholder="" fieldSize="medium" status="primary" shape="rectangle" disabled><br/><br/>
+          <button (click)="uploadCsvFile()" nbButton status="success" type="submit">Subir</button><br/><br/>
+          <input type="file" (change)="onChange($event)" nbInput fullWidth status="basic" placeholder="Upload" #file>
+        </nb-card-body>
+      </nb-card>
     </div>
   </div>
   

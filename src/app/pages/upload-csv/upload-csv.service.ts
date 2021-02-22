@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 export class UploadCsvService extends BaseService {
 
     httpOptions;
-    // Returns an observable 
+
+    // Based from implementation in https://www.geeksforgeeks.org/angular-file-upload/ 
     uploadCsv(file):Observable<any> { 
     
         // Create form data 
@@ -20,8 +21,7 @@ export class UploadCsvService extends BaseService {
         formData.append("file", file, file.name); 
         
         // Make http post request over api 
-        // with formData as req 
-        console.log(formData)
+        // with formData as request
         this.httpOptions = {
         };
         return this.postBase(formData, 'csv/upload-csv/',this.httpOptions);
