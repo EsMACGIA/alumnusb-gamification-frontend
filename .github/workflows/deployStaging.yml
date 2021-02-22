@@ -3,7 +3,7 @@ name: Deploy Heroku Staging
 on:
   push:
     branches:
-      - 'test_images_heroku'
+      - 'master'
 
 jobs:
   build:
