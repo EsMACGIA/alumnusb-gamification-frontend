@@ -6,7 +6,7 @@ import { AchievementsModel } from './achievements.model';
   templateUrl: './achievements.component.html',
   styleUrls: ['./achievements.component.scss'],
 })
-export class AchievementsComponent{
+export class AchievementsComponent {
   userId: Number;
   achievements = new AchievementsModel();
   @ViewChild('achieved', { static: true }) achieved;
