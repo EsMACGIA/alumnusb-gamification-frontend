@@ -6,12 +6,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { StatsComponent } from './stats/stats.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'my_profile',
+      component: ProfileComponent,
+    },
     {
       path: 'my_achievements',
       component: AchievementsComponent,
