@@ -30,6 +30,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   private alive = true;
   isAuthenticated: boolean = false;
+  isAdmin: boolean = false;
   user: any;
 
   constructor(
@@ -60,6 +61,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     body.classList.add('landing-page');
     this.user = this.authService.getUserInfo();
     this.isAuthenticated = this.authService.isAuthenticated();
+    this.isAdmin = (this.user.isAdmin == 'true')
   }
   ngOnDestroy() {
     this.alive = false;
