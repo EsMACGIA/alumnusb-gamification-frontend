@@ -15,7 +15,7 @@ export class ProfileModel {
     email: string;
     mobile: number;
     cohorte: number;
-    birthdate: string;
+    birthdate: any;
     age: number;
     undergrad_degree: string;
     graduate_degree: string;

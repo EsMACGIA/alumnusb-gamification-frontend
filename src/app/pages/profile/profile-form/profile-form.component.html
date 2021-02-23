@@ -1,0 +1,138 @@
+<div class="dialog-container">
+  <nb-card>
+    <nb-card-header>Editar Perfil</nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputFirstName" class="label">Primer Nombre</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.first_name" fullWidth id="inputFirstName" placeholder="Nombre">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputMiddleName" class="label">Segundo Nombre</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.middle_name" fullWidth id="inputMiddleName" placeholder="Segundo Nombre">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputLastName" class="label">Apellido</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.last_name" fullWidth id="inputLastName" placeholder="Apellido">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputAge" class="label">Edad</label>
+                <input type="number" nbInput [(ngModel)]="profileEdit.age" fullWidth id="inputAge" placeholder="Edad">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputMobile" class="label">Número de teléfono</label>
+                <input type="number" nbInput [(ngModel)]="profileEdit.mobile" fullWidth id="inputMobile" placeholder="581234567890">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputBirthdate" class="label">Fecha de nacimiento</label>
+                <input nbInput [(ngModel)]="profileEdit.birthdate" fullWidth id="inputBirthdate" [nbDatepicker]="formpicker" placeholder="Fecha de nacimiento">
+                <nb-datepicker #formpicker></nb-datepicker>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputCity" class="label">Ciudad</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.mailing_city" fullWidth id="inputCity" placeholder="Ciudad">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputState" class="label">Estado</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.mailing_state" fullWidth id="inputState" placeholder="Estado">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputCountry" class="label">País</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.mailing_country" fullWidth id="inputCountry" disabled placeholder="País">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputCohorte" class="label">Cohorte</label>
+                <input type="number" nbInput [(ngModel)]="profileEdit.cohorte" fullWidth id="inputCohorte" placeholder="10">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputCarnet" class="label">Carnet</label>
+                <input type="number" nbInput [(ngModel)]="profileEdit.carnet" fullWidth id="inputCarnet" placeholder="10000">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputUndergradDegree" class="label">Pregrado</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.undergrad_degree" fullWidth id="inputUndergradDegree" disabled placeholder="Pregrado">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputUndergradCampus" class="label">Campus de Pregrado</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.usb_undergrad_campus" fullWidth id="inputUndergradCampus" disabled placeholder="Campus de pregrado">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputGradiateDegree" class="label">Maestria</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.graduate_degree" fullWidth id="inputGraduateDegree" placeholder="Maestria">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputGraduateCampus" class="label">Campus de Maestria</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.graduate_campus" fullWidth id="inputGraduateCampus" placeholder="Campus de Maestria">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputWorkPlace" class="label">Lugar de trabajo</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.workplace" fullWidth id="inputWorkPlace" placeholder="Lugar de trabajo">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputWorkEmail" class="label">Correo Electrónico de trabajo</label>
+                <input type="email" nbInput [(ngModel)]="profileEdit.work_email" fullWidth id="inputWorkEmail" placeholder="info@ejemplo.com">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="inputTwitter" class="label">Twitter</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.twitter_account" fullWidth id="inputTwitter" placeholder="@twitter">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="inputInstagram" class="label">instagram</label>
+                <input type="text" nbInput [(ngModel)]="profileEdit.instagram_account" fullWidth id="inputInstagram" placeholder="@instagram">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <nb-checkbox [(ngModel)]="profileEdit.donor">Donante recurrente</nb-checkbox>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <nb-checkbox [(ngModel)]="profileEdit.usb_alumn">Estudiante de la USB</nb-checkbox>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+    <nb-card-footer>
+      <button class="cancel" nbButton status="danger" (click)="cancel()">Cancelar</button>
+      <button nbButton status="success" (click)="submit(profileEdit)">Aceptar</button>
+    </nb-card-footer>
+  </nb-card>
+</div>
