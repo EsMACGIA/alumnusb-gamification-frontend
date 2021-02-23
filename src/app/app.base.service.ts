@@ -129,6 +129,4 @@ export class BaseService {
             return httpOptions;
         }
     }
-
-    setHeadersFile(){}
 }
