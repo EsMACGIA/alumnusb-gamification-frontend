@@ -34,18 +34,23 @@
 }
 
 .profile-img-selector {
-    .file {
-        position: relative;
-        overflow: hidden;
-        margin-top: -20%;
-        width: 80%;
-        border: none;
-        border-radius: 0;
-        background: #212529b8;
+    img {
+        width: 100%;
     }
+}
+
+.dialog-box{
+    height: 100%;
+    overflow: auto;
 }
 
 .profile-personal {
     margin-top: 10px;
 }
 
+::ng-deep{
+    nb-dialog-container {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -30,8 +30,7 @@ export class ProfileComponent {
 
   editProfilePhoto(dialog: TemplateRef<any>) {
     this.dialogService.open(
-      dialog,
-      { context: 'this is some additional data passed to dialog' });
+      dialog);
   }
 
   selectProfilePhoto(photoId) {
