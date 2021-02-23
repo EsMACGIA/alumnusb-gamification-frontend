@@ -35,17 +35,17 @@ export class UploadCsvComponent implements OnInit {
       return;
     }
     this.showToast('primary', 'El archivo esta siendo cargado', '');
-        this.uploadCsvService.uploadCsv(this.file).subscribe(
-          // On success
-            (event: any) => {
-                if (typeof (event) === 'object') {
-                    this.showToast('success', 'El archivo fue cargado exitosamente', '');
-                }
+    this.uploadCsvService.uploadCsv(this.file).subscribe(
+      // On success
+        (event: any) => {
+            if (typeof (event) === 'object') {
+                this.showToast('success', 'El archivo fue cargado exitosamente', '');
             }
-        // On error
-        ,  (event: any) => {
-          this.showToast('danger', 'El archivo no pudo ser cargado', '');
-      } );
+          }
+      // On error
+      ,  (event: any) => {
+        this.showToast('danger', 'El archivo no pudo ser cargado', '');
+    } );
   }
 
   private showToast(type: NbComponentStatus, title: string, body: string) {
