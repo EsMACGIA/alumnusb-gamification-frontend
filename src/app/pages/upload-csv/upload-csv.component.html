@@ -1,6 +1,7 @@
+<h1>Cargar CSV</h1>
 <div class="lists row">
     <div class="col-lg-6">
-      <nb-card class="list-card" size="medium">
+      <nb-card class="list-card" size="giant">
         <nb-card-header>Orden de columnas del CSV</nb-card-header>
         <nb-card-body>
           <nb-list>
@@ -19,7 +20,7 @@
           <button class="browse-button" (click)="file.click()" nbButton status="primary" type="submit">Examinar...</button>
           <input id="file-name" type="text" nbInput placeholder="" fieldSize="medium" status="primary" shape="rectangle" disabled><br/><br/>
           <button (click)="uploadCsvFile()" nbButton status="success" type="submit">Subir</button><br/><br/>
-          <input type="file" (change)="onChange($event)" nbInput fullWidth status="basic" placeholder="Upload" #file>
+          <input type="file" accept=".csv" (change)="onChange($event)" nbInput fullWidth status="basic" placeholder="Upload" #file>
         </nb-card-body>
       </nb-card>
     </div>
