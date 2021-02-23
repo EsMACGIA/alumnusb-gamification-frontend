@@ -33,12 +33,12 @@ export class ProfileComponent {
       dialog);
   }
 
-  selectProfilePhoto(photoId:string) {
+  selectProfilePhoto(photoId: string) {
     this.id = Number(localStorage.getItem('userId'));
-    var updatedProfile = new ProfileModel();
-    updatedProfile["picture"] = photoId;
+    let updatedProfile = new ProfileModel();
+    updatedProfile['picture'] = photoId;
 
-    this.profileService.updateProfile(updatedProfile,this.id).subscribe(
+    this.profileService.updateProfile(updatedProfile, this.id).subscribe(
       // On success
         (event: any) => {
             if (typeof (event) === 'object') {

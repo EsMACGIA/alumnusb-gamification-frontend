@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
   })
 export class UploadCsvService extends BaseService {
-    
+
     // Based from implementation in https://www.geeksforgeeks.org/angular-file-upload/
     uploadCsv(file): Observable<any> {
 
@@ -20,6 +20,6 @@ export class UploadCsvService extends BaseService {
 
         // Make http post request over api
         // with formData as request
-        return this.postBase(formData, 'csv/upload-csv/', this.setHeaders(file=true));
+        return this.postBase(formData, 'csv/upload-csv/', this.setHeaders(file = true));
     }
 }
