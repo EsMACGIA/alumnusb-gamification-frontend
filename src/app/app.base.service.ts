@@ -107,15 +107,26 @@ export class BaseService {
     /**
      * Method to set authorization headers
      */
-    setHeaders(): any {
-        const httpOptions = {
-            headers: new HttpHeaders(
-                {
-                    'Content-Type': 'application/json',
-                    'Authorization': `JWT ${localStorage.getItem('currentToken')}`,
-                },
-            ),
-        };
-        return httpOptions;
+    setHeaders(file = false): any {
+        if (file){
+            const httpOptions = { 
+                headers: new HttpHeaders(
+                    {
+                        'Authorization': `JWT ${localStorage.getItem('currentToken')}`,
+                    },
+                ),
+            };
+            return httpOptions;
+        }else{
+            const httpOptions = { 
+                headers: new HttpHeaders(
+                    {
+                        'Content-Type': 'application/json',
+                        'Authorization': `JWT ${localStorage.getItem('currentToken')}`,
+                    },
+                ),
+            };
+            return httpOptions;
+        }
     }
 }
