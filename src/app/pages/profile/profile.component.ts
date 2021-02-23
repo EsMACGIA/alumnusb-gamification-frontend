@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { ProfileModel } from './profile.model';
 import { ProfileService } from './profile.service';
+import { NbDialogService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-profile',
@@ -13,7 +14,8 @@ export class ProfileComponent {
   id: number;
 
   constructor(
-    private profileService: ProfileService) {
+    private profileService: ProfileService,
+    private dialogService: NbDialogService) {
     this.id = Number(localStorage.getItem('userId'));
     this.getData();
   }
@@ -24,5 +26,15 @@ export class ProfileComponent {
         this.profileData = data;
       }
     });
+  }
+
+  editProfilePhoto(dialog: TemplateRef<any>) {
+    this.dialogService.open(
+      dialog,
+      { context: 'this is some additional data passed to dialog' });
+  }
+
+  selectProfilePhoto(photoId) {
+    console.log(photoId)
   }
 }
