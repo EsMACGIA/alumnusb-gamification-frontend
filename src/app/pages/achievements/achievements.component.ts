@@ -11,6 +11,7 @@ import { medals } from '../../../assets/data/medals';
 })
 export class AchievementsComponent implements OnInit{
   userId: Number;
+  loading = false;
   achievements = new AchievementsModel();
   medals: any;
   
@@ -26,11 +27,13 @@ export class AchievementsComponent implements OnInit{
   }
 
   loadAchievements(){
-    this.userId = this.authService.userId
+    this.loading = true;
+    this.userId = this.authService.userId;
     this.achievementsService.getAchievements(this.userId).subscribe(data=>{
       if (data){
         this.achievements = data;
       }
+      this.loading = false;
     })
   }
 }
