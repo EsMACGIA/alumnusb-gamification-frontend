@@ -7,8 +7,8 @@
 <div class="row">
     <nb-card class="col-md-5 list-card">
         <nb-card-body>
-            <div class="profile-img">
-                <img src="/assets/images/profile/1.png"/>
+            <div class="profile-img" *ngIf="profileData.picture">
+                <img src = "/assets/images/profile/{{profileData.picture}}.png">
                 <button (click)="editProfilePhoto(dialog)"  class="file" nbButton status="info">Cambiar imagen.</button>
             </div>
         </nb-card-body>

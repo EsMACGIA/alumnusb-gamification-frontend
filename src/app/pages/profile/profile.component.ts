@@ -35,7 +35,7 @@ export class ProfileComponent {
 
   selectProfilePhoto(photoId: string) {
     this.id = Number(localStorage.getItem('userId'));
-    let updatedProfile = new ProfileModel();
+    const updatedProfile = new ProfileModel();
     updatedProfile['picture'] = photoId;
 
     this.profileService.updateProfile(updatedProfile, this.id).subscribe(
