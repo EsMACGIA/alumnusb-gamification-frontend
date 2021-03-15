@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 
 import { ProfileModel } from './profile.model';
@@ -10,17 +10,19 @@ import { ProfileFormComponent } from './profile-form/profile-form.component';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 
-  profileData = new ProfileModel();
+  profileData: ProfileModel = new ProfileModel();
   id: number;
 
   constructor(
     private nbDialogService: NbDialogService,
-    private profileService: ProfileService) {
-      this.id = Number(localStorage.getItem('userId'));
-      this.getProfileData(this.id);
-    }
+    private profileService: ProfileService) {}
+
+  ngOnInit() {
+    this.id = Number(localStorage.getItem('userId'));
+    this.getProfileData(this.id);
+  }
 
   getProfileData(id) {
     this.profileService.getProfile(id).subscribe(data => {
@@ -31,7 +33,7 @@ export class ProfileComponent {
   }
 
   open() {
-    this.nbDialogService.open(ProfileFormComponent, { closeOnBackdropClick: false , hasScroll: true})
+    this.nbDialogService.open(ProfileFormComponent, { closeOnBackdropClick: false , hasScroll: true, context: {profileData: this.profileData}})
     .onClose.subscribe(profile => {
       if (profile) {
         this.profileService.updateProfile(profile, this.id).subscribe(data => {

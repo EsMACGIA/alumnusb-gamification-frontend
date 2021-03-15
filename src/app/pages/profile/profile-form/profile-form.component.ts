@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
 import { ProfileModel } from '../profile.model';
+import { countries } from '../../../../assets/data/countries';
+import { undergrad_campus } from '../../../../assets/data/undergrad_campus';
+import { undergrad_degree } from '../../../../assets/data/undergrad_degree';
 
 @Component({
   selector: 'profile-form-prompt',
@@ -10,14 +13,26 @@ import { ProfileModel } from '../profile.model';
 })
 export class ProfileFormComponent implements OnInit {
 
+  profileData: ProfileModel;
   profileEdit: ProfileModel = new ProfileModel();
+  countries: any;
+  undergrad_campus: any;
+  undergrad_degree: any;
+  birthdate: Date;
 
   constructor(
     protected ref: NbDialogRef<ProfileFormComponent>,
     ) {}
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+    console.log(this.profileData);
+    Object.assign(this.profileEdit, this.profileData);
+    this.countries = countries;
+    this.undergrad_campus = undergrad_campus;
+    this.undergrad_degree = undergrad_degree;
+    var temp = this.profileEdit.birthdate.split('-');
+    console.log(temp);
+    this.birthdate = new Date(temp[0], temp[1]-1, temp[2]);
   }
 
   cancel() {
@@ -25,8 +40,7 @@ export class ProfileFormComponent implements OnInit {
   }
 
   submit(profile) {
-    if (this.profileEdit.birthdate)
-      this.profileEdit.birthdate = this.profileEdit.birthdate.toISOString().split('T')[0];
+    this.profileEdit.birthdate = this.birthdate.toISOString().split('T')[0];
     this.ref.close(profile);
   }
 }

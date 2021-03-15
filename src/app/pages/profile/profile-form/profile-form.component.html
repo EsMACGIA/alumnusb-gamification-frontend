@@ -36,7 +36,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="inputBirthdate" class="label">Fecha de nacimiento</label>
-                <input nbInput [(ngModel)]="profileEdit.birthdate" fullWidth id="inputBirthdate" [nbDatepicker]="formpicker" placeholder="Fecha de nacimiento">
+                <input nbInput [(ngModel)]="birthdate" fullWidth id="inputBirthdate" [nbDatepicker]="formpicker" placeholder="Fecha de nacimiento">
                 <nb-datepicker #formpicker></nb-datepicker>
               </div>
             </div>
@@ -55,7 +55,10 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="inputCountry" class="label">País</label>
-                <input type="text" nbInput [(ngModel)]="profileEdit.mailing_country" fullWidth id="inputCountry" disabled placeholder="País">
+                <!-- <input type="text" nbInput [(ngModel)]="profileEdit.mailing_country" fullWidth id="inputCountry" placeholder="País"> -->
+                <nb-select [(ngModel)]="profileEdit.mailing_country" fullWidth>
+                  <nb-option *ngFor="let c of this.countries | keyvalue" [value]="c.key">{{ c.value }}</nb-option>
+                </nb-select>
               </div>
             </div>
             <div class="col-md-6">
@@ -73,13 +76,19 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputUndergradDegree" class="label">Pregrado</label>
-                <input type="text" nbInput [(ngModel)]="profileEdit.undergrad_degree" fullWidth id="inputUndergradDegree" disabled placeholder="Pregrado">
+                <!-- <input type="text" nbInput [(ngModel)]="profileEdit.undergrad_degree" fullWidth id="inputUndergradDegree" disabled placeholder="Pregrado"> -->
+                <nb-select [(ngModel)]="profileEdit.undergrad_degree" fullWidth>
+                  <nb-option *ngFor="let d of this.undergrad_degree | keyvalue" [value]="d.key">{{ d.value }}</nb-option>
+                </nb-select>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputUndergradCampus" class="label">Campus de Pregrado</label>
-                <input type="text" nbInput [(ngModel)]="profileEdit.usb_undergrad_campus" fullWidth id="inputUndergradCampus" disabled placeholder="Campus de pregrado">
+                <!-- <input type="text" nbInput [(ngModel)]="profileEdit.usb_undergrad_campus" fullWidth id="inputUndergradCampus" disabled placeholder="Campus de pregrado"> -->
+                <nb-select [(ngModel)]="profileEdit.usb_undergrad_campus" fullWidth>
+                  <nb-option *ngFor="let c of this.undergrad_campus | keyvalue" [value]="c.key">{{ c.value }}</nb-option>
+                </nb-select>
               </div>
             </div>
             <div class="col-md-6">
