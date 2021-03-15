@@ -13,7 +13,7 @@ import {
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { ProfileFormComponent } from './profile-form/profile-form.component'
+import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { ProfileComponent } from './profile.component';
 import { ProfileService } from './profile.service';
 

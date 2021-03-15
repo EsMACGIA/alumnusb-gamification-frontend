@@ -108,8 +108,8 @@ export class BaseService {
      * Method to set authorization headers
      */
     setHeaders(file = false): any {
-        if (file){
-            const httpOptions = { 
+        if (file) {
+            const httpOptions = {
                 headers: new HttpHeaders(
                     {
                         'Authorization': `JWT ${localStorage.getItem('currentToken')}`,
@@ -117,8 +117,8 @@ export class BaseService {
                 ),
             };
             return httpOptions;
-        }else{
-            const httpOptions = { 
+        } else {
+            const httpOptions = {
                 headers: new HttpHeaders(
                     {
                         'Content-Type': 'application/json',

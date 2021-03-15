@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit {
           if (data) {
             window.location.reload();
           }
-        })
+        });
       }
     });
   }

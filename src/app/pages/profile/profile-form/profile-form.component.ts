@@ -7,7 +7,7 @@ import { undergrad_campus } from '../../../../assets/data/undergrad_campus';
 import { undergrad_degree } from '../../../../assets/data/undergrad_degree';
 
 @Component({
-  selector: 'profile-form-prompt',
+  selector: 'ngx-profile-form-prompt',
   templateUrl: 'profile-form.component.html',
   styleUrls: ['profile-form.component.scss'],
 })
@@ -25,14 +25,12 @@ export class ProfileFormComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    console.log(this.profileData);
     Object.assign(this.profileEdit, this.profileData);
     this.countries = countries;
     this.undergrad_campus = undergrad_campus;
     this.undergrad_degree = undergrad_degree;
-    var temp = this.profileEdit.birthdate.split('-');
-    console.log(temp);
-    this.birthdate = new Date(temp[0], temp[1]-1, temp[2]);
+    const temp = this.profileEdit.birthdate.split('-');
+    this.birthdate = new Date(temp[0], temp[1] - 1, temp[2]);
   }
 
   cancel() {
