@@ -2,6 +2,7 @@ import { of, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 /**
  * Service with methods to add, edit or
@@ -25,6 +26,7 @@ export class BaseService {
      */
     constructor(
         private http: HttpClient,
+        private router: Router,
     ) {}
 
     /**
@@ -100,6 +102,15 @@ export class BaseService {
      */
     private handleError<T>(operation = 'operation') {
         return (error_object: any): Observable<T> => {
+            // When the JWT token is expired
+            if (error_object.status == 401 && localStorage.getItem('currentToken')){
+                localStorage.removeItem('currentToken');
+                localStorage.removeItem('userId');
+                localStorage.removeItem('username');
+                localStorage.removeItem('email');
+                localStorage.removeItem('isAdmin');
+                this.router.navigate(['/']);
+            }
             return of(error_object);
         };
     }
