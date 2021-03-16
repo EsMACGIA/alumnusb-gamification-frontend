@@ -9,6 +9,7 @@ import { StatsComponent } from './stats/stats.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -17,26 +18,32 @@ const routes: Routes = [{
     {
       path: 'my_profile',
       component: ProfileComponent,
+      canActivate: [ AuthGuard ],
     },
     {
       path: 'my_achievements',
       component: AchievementsComponent,
+      canActivate: [ AuthGuard ],
     },
     {
       path: 'my_stats',
       component: StatsComponent,
+      canActivate: [ AuthGuard ],
     },
     {
       path: 'upload-csv',
       component: UploadCsvComponent,
+      canActivate: [ AuthGuard ],
     },
     {
       path: 'dashboard',
       component: ECommerceComponent,
+      canActivate: [ AuthGuard ],
     },
     {
       path: 'iot-dashboard',
       component: DashboardComponent,
+      canActivate: [ AuthGuard ],
     },
     {
       path: 'layout',
