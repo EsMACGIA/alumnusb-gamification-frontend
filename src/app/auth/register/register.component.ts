@@ -14,6 +14,7 @@ import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalP
 export class NgxRegisterComponent extends NbRegisterComponent {
 
   destroyByClick = false;
+  loading = false;
   duration = 4000;
   hasIcon = true;
   preventDuplicates = false;
@@ -32,6 +33,7 @@ export class NgxRegisterComponent extends NbRegisterComponent {
   }
 
   registerUser(user) {
+    this.loading = true;
     this.authService.register(user).subscribe(data => {
       if (data) {
         if (data.id) {
@@ -44,6 +46,7 @@ export class NgxRegisterComponent extends NbRegisterComponent {
         } else if (data.email) {
           this.showToast('danger', 'Error al registrar', data.email[0]);
         }
+        this.loading = false;
       }
     });
   }

@@ -10,6 +10,7 @@ import {
   NbButtonModule,
   NbCheckboxModule,
   NbInputModule,
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 // Components
@@ -30,6 +31,7 @@ import { AuthService } from './auth.service';
     NbCheckboxModule,
     NgxAuthRoutingModule,
     NbAuthModule,
+    NbSpinnerModule,
   ],
   declarations: [
     NgxLoginComponent,

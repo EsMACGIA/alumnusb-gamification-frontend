@@ -6,6 +6,7 @@ import {
   NbListModule,
   NbTabsetModule,
   NbAccordionModule,
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -23,6 +24,7 @@ import { ProfileService } from './profile.service';
       NbTabsetModule,
       NbAccordionModule,
       ThemeModule,
+      NbSpinnerModule,
     ],
     declarations: [
       ProfileComponent,
