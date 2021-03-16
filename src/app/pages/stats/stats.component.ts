@@ -11,6 +11,7 @@ import { StatsService } from './stats.service';
 export class StatsComponent {
 
   userId: Number;
+  loading = false;
   stats = new StatsModel();
 
   constructor(
@@ -21,10 +22,12 @@ export class StatsComponent {
   }
 
   getUserStats(id) {
+    this.loading = true;
     this.statsService.getStats(id).subscribe(data => {
       if (data) {
         this.stats = data;
       }
+      this.loading = false;
     });
   }
 

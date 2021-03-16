@@ -19,7 +19,7 @@
           <p>Por favor recuerda que el archivo debe estar en formato CSV adecuadamente<br/><br/></p>
           <button class="browse-button" (click)="file.click()" nbButton status="primary" type="submit">Examinar...</button>
           <input id="file-name" type="text" nbInput placeholder="" fieldSize="medium" status="primary" shape="rectangle" disabled><br/><br/>
-          <button (click)="uploadCsvFile()" nbButton status="success" type="submit">Subir</button><br/><br/>
+          <button [nbSpinner]="loading" nbSpinnerStatus="info" (click)="uploadCsvFile()" nbButton status="success" type="submit">Subir</button><br/><br/>
           <input type="file" accept=".csv" (change)="onChange($event)" nbInput fullWidth status="basic" placeholder="Upload" #file>
         </nb-card-body>
       </nb-card>

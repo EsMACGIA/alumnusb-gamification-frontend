@@ -3,6 +3,7 @@ import {
   NbCardModule,
   NbListModule,
   NbAccordionModule,
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -15,6 +16,7 @@ import { AchievementsService } from './achievements.service';
       NbListModule,
       NbAccordionModule,
       ThemeModule,
+      NbSpinnerModule,
     ],
     declarations: [
       AchievementsComponent,

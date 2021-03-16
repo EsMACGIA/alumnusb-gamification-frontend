@@ -3,7 +3,7 @@
   <div class="col-md-3">
     <nb-flip-card>
       <nb-card-front>
-        <nb-card accent="success">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="success">
           <nb-card-header>
             Mejor donación
           </nb-card-header>
@@ -13,7 +13,7 @@
         </nb-card>
       </nb-card-front>
       <nb-card-back>
-        <nb-card accent="danger">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="danger">
           <nb-card-header>
             Menor donación
           </nb-card-header>
@@ -27,7 +27,7 @@
   <div class="col-md-3">
     <nb-reveal-card>
       <nb-card-front>
-        <nb-card accent="info">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="info">
           <nb-card-header>
             Fecha de la primera donación
           </nb-card-header>
@@ -37,7 +37,7 @@
         </nb-card>
       </nb-card-front>
       <nb-card-back>
-        <nb-card accent="info">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="info">
           <nb-card-header>
             Fecha de la ultima donación
           </nb-card-header>
@@ -51,7 +51,7 @@
   <div class="col-md-6">
     <nb-reveal-card>
       <nb-card-front>
-        <nb-card accent="warning">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="warning">
           <nb-card-header>
             Año de mejor donación
           </nb-card-header>
@@ -61,7 +61,7 @@
         </nb-card>
       </nb-card-front>
       <nb-card-back>
-        <nb-card accent="success">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="success">
           <nb-card-header>
             Total donado en el mejor año
           </nb-card-header>
@@ -75,7 +75,7 @@
 </div>
 <div class="row">
   <div class="col-md-4">
-    <nb-card accent="info">
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="info">
       <nb-card-header>
         Donación Promedio
       </nb-card-header>
@@ -85,7 +85,7 @@
     </nb-card>
   </div>
   <div class="col-md-4">
-    <nb-card accent="primary">
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="primary">
       <nb-card-header>
         Número de Donaciones
       </nb-card-header>
@@ -95,7 +95,7 @@
     </nb-card>
   </div>
   <div class="col-md-4">
-    <nb-card accent="success">
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large" accent="success">
       <nb-card-header>
         Total donado
       </nb-card-header>
