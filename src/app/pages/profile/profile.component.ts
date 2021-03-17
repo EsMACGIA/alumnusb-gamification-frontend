@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
       if (profile) {
         this.profileService.updateProfile(profile, this.id).subscribe(data => {
           if (data) {
-            window.location.reload();
+            this.getProfileData(this.id);
           }
         });
       }

@@ -30,12 +30,20 @@
         </div>
         <nb-tabset>
             <nb-tab tabTitle="Sobre mi">
-                <div class="row profile-personal">
+                <div class="row">
                     <div class="col-6">
                         <strong class="text-heading">Fecha de nacimiento:</strong>
                     </div>
                     <div class="col-6">
                         <p class="text-basic">{{ profileData.birthdate | date}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <strong class="text-heading">Edad:</strong>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-basic">{{ profileData.age }}</p>
                     </div>
                 </div>
                 <div class="row">
