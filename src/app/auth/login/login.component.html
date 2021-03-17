@@ -67,6 +67,8 @@
   </div>
 
   <button nbButton
+          [nbSpinner]="loading"
+          nbSpinnerStatus="info"
           fullWidth
           status="success"
           [disabled]="submitted || !form.valid"

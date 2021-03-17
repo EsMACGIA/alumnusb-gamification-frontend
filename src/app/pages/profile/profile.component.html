@@ -4,7 +4,7 @@
         <i class="fas fa-edit" style="margin-right: 5px;"></i> Editar perfil
     </button>
 </div>
-<div class="row">
+<div [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="giant" class="row">
     <nb-card class="col-md-5 list-card">
         <nb-card-body>
             <div class="profile-img" *ngIf="profileData.picture">

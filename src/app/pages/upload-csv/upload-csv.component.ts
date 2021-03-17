@@ -15,6 +15,7 @@ export class UploadCsvComponent implements OnInit {
 
   constructor(private uploadCsvService: UploadCsvService, private toastrService: NbToastrService) { }
   destroyByClick = false;
+  loading = false;
   duration = 4000;
   hasIcon = true;
   preventDuplicates = false;
@@ -30,22 +31,25 @@ export class UploadCsvComponent implements OnInit {
   }
 
   uploadCsvFile() {
+    this.loading = true;
     if (this.file == null) {
       this.showToast('warning', 'No se ha seleccionado ningun archivo', '');
       return;
     }
     this.showToast('primary', 'El archivo esta siendo cargado', '');
-    this.uploadCsvService.uploadCsv(this.file).subscribe(
-      // On success
-        (event: any) => {
-            if (typeof (event) === 'object') {
-                this.showToast('success', 'El archivo fue cargado exitosamente', '');
+        this.uploadCsvService.uploadCsv(this.file).subscribe(
+          // On success
+            (event: any) => {
+                if (typeof (event) === 'object') {
+                    this.showToast('success', 'El archivo fue cargado exitosamente', '');
+                    this.loading = false;
+                }
             }
-          }
-      // On error
-      ,  (event: any) => {
-        this.showToast('danger', 'El archivo no pudo ser cargado', '');
-    } );
+        // On error
+        ,  (event: any) => {
+          this.showToast('danger', 'El archivo no pudo ser cargado', '');
+          this.loading = false;
+        } );
   }
 
   private showToast(type: NbComponentStatus, title: string, body: string) {

@@ -6,6 +6,7 @@ import { LoginModel } from './models/login.model';
 import { RegisterModel } from './models/register.model';
 
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService extends BaseService {
@@ -13,8 +14,9 @@ export class AuthService extends BaseService {
 
   constructor(
     http: HttpClient,
+    router: Router,
     ) {
-      super(http);
+      super(http,router);
       this.userId = Number(localStorage.getItem('userId'));
   }
 
@@ -34,7 +36,14 @@ export class AuthService extends BaseService {
   }
 
   isAuthenticated() {
-    return localStorage.getItem('currentToken') != null;
+    if (localStorage.getItem('currentToken')){
+      const tokenParts = localStorage.getItem('currentToken').split(/\./);
+      const tokenDecoded = JSON.parse(window.atob(tokenParts[1]));
+      const tokenDate = new Date(tokenDecoded.exp * 1000);
+      const currentDate = new Date();
+      return tokenDate > currentDate;
+    }
+    return false;
   }
 
   isAdmin() {

@@ -12,6 +12,7 @@ export class ProfileComponent {
 
   profileData = new ProfileModel();
   id: number;
+  loading = false;
 
   constructor(
     private profileService: ProfileService,
@@ -21,10 +22,12 @@ export class ProfileComponent {
   }
 
   getData() {
+    this.loading = true;
     this.profileService.getProfile(this.id).subscribe(data => {
       if (data) {
         this.profileData = data;
       }
+      this.loading = false;
     });
   }
 
