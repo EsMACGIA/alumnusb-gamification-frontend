@@ -29,8 +29,6 @@ import { AuthService } from '../auth/auth.service';
 export class LandingPageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   private alive = true;
-  isAuthenticated: boolean = false;
-  isAdmin: boolean = false;
   user: any;
 
   constructor(

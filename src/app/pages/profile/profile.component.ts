@@ -1,27 +1,32 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NbDialogService } from '@nebular/theme';
+
 import { ProfileModel } from './profile.model';
 import { ProfileService } from './profile.service';
-import { NbDialogService } from '@nebular/theme';
+import { ProfileFormComponent } from './profile-form/profile-form.component';
 
 @Component({
   selector: 'ngx-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
 
-  profileData = new ProfileModel();
+  profileData: ProfileModel = new ProfileModel();
   id: number;
   loading = false;
 
   constructor(
+    private nbDialogService: NbDialogService,
     private profileService: ProfileService,
-    private dialogService: NbDialogService) {
+    private dialogService: NbDialogService) {}
+
+  ngOnInit() {
     this.id = Number(localStorage.getItem('userId'));
-    this.getData();
+    this.getProfileData(this.id);
   }
 
-  getData() {
+  getProfileData(id) {
     this.loading = true;
     this.profileService.getProfile(this.id).subscribe(data => {
       if (data) {
@@ -49,4 +54,17 @@ export class ProfileComponent {
             }
           });
   }
+  open() {
+    this.nbDialogService.open(ProfileFormComponent, { closeOnBackdropClick: false , hasScroll: true, context: {profileData: this.profileData}})
+    .onClose.subscribe(profile => {
+      if (profile) {
+        this.profileService.updateProfile(profile, this.id).subscribe(data => {
+          if (data) {
+            window.location.reload();
+          }
+        });
+      }
+    });
+  }
+
 }

@@ -16,7 +16,7 @@ export class AuthService extends BaseService {
     http: HttpClient,
     router: Router,
     ) {
-      super(http,router);
+      super(http, router);
       this.userId = Number(localStorage.getItem('userId'));
   }
 
@@ -36,7 +36,7 @@ export class AuthService extends BaseService {
   }
 
   isAuthenticated() {
-    if (localStorage.getItem('currentToken')){
+    if (localStorage.getItem('currentToken')) {
       const tokenParts = localStorage.getItem('currentToken').split(/\./);
       const tokenDecoded = JSON.parse(window.atob(tokenParts[1]));
       const tokenDate = new Date(tokenDecoded.exp * 1000);

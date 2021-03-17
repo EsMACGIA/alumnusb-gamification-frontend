@@ -103,7 +103,7 @@ export class BaseService {
     private handleError<T>(operation = 'operation') {
         return (error_object: any): Observable<T> => {
             // When the JWT token is expired
-            if (error_object.status == 401 && localStorage.getItem('currentToken')){
+            if (error_object.status == 401 && localStorage.getItem('currentToken')) {
                 localStorage.removeItem('currentToken');
                 localStorage.removeItem('userId');
                 localStorage.removeItem('username');
