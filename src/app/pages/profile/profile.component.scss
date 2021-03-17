@@ -33,7 +33,24 @@
     }
 }
 
+.profile-img-selector {
+    img {
+        width: 100%;
+    }
+}
+
+.dialog-box{
+    height: 100%;
+    overflow: auto;
+}
+
 .profile-personal {
     margin-top: 10px;
 }
 
+::ng-deep{
+    nb-dialog-container {
+        display: flex;
+        justify-content: center;
+    }
+}

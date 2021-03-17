@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
 
 import { ProfileModel } from './profile.model';
@@ -35,6 +35,24 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  editProfilePhoto(dialog: TemplateRef<any>) {
+    this.nbDialogService.open(
+      dialog);
+  }
+
+  selectProfilePhoto(photoId: string) {
+    this.id = Number(localStorage.getItem('userId'));
+    const updatedProfile = new ProfileModel();
+    updatedProfile['picture'] = photoId;
+
+    this.profileService.updateProfile(updatedProfile, this.id).subscribe(
+      // On success
+        (event: any) => {
+            if (typeof (event) === 'object') {
+              window.location.reload();
+            }
+          });
+  }
   open() {
     this.nbDialogService.open(ProfileFormComponent, { closeOnBackdropClick: false , hasScroll: true, context: {profileData: this.profileData}})
     .onClose.subscribe(profile => {
