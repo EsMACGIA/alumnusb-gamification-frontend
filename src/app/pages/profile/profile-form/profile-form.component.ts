@@ -18,7 +18,6 @@ export class ProfileFormComponent implements OnInit {
   countries: any;
   undergrad_campus: any;
   undergrad_degree: any;
-  birthdate: Date;
 
   constructor(
     protected ref: NbDialogRef<ProfileFormComponent>,
@@ -26,11 +25,20 @@ export class ProfileFormComponent implements OnInit {
 
   ngOnInit() {
     Object.assign(this.profileEdit, this.profileData);
+    const temp = this.profileEdit.birthdate.split('-');
+    this.profileEdit.birthdate = new Date(temp[0], temp[1] - 1, temp[2]);
     this.countries = countries;
     this.undergrad_campus = undergrad_campus;
     this.undergrad_degree = undergrad_degree;
-    const temp = this.profileEdit.birthdate.split('-');
-    this.birthdate = new Date(temp[0], temp[1] - 1, temp[2]);
+  }
+
+  clean(obj) {
+    for (const propName in obj) {
+      if (obj[propName] === '' || obj[propName] === null) {
+        delete obj[propName];
+      }
+    }
+    return obj;
   }
 
   cancel() {
@@ -38,7 +46,9 @@ export class ProfileFormComponent implements OnInit {
   }
 
   submit(profile) {
-    this.profileEdit.birthdate = this.birthdate.toISOString().split('T')[0];
+    this.clean(this.profileEdit);
+    if (this.profileEdit.birthdate)
+      this.profileEdit.birthdate = this.profileEdit.birthdate.toISOString().split('T')[0];
     this.ref.close(profile);
   }
 }
