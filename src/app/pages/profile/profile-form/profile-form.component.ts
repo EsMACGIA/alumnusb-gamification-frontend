@@ -33,8 +33,8 @@ export class ProfileFormComponent implements OnInit {
   }
 
   clean(obj) {
-    for (var propName in obj) {
-      if (obj[propName] === "" || obj[propName] === null) {
+    for (const propName in obj) {
+      if (obj[propName] === '' || obj[propName] === null) {
         delete obj[propName];
       }
     }
