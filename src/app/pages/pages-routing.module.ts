@@ -17,25 +17,25 @@ const routes: Routes = [{
       path: 'my_profile',
       component: ProfileComponent,
       canActivate: [ AuthGuard ],
-      data: { admin: false}
+      data: { admin: false},
     },
     {
       path: 'my_achievements',
       component: AchievementsComponent,
       canActivate: [ AuthGuard ],
-      data: { admin: false}
+      data: { admin: false},
     },
     {
       path: 'my_stats',
       component: StatsComponent,
       canActivate: [ AuthGuard ],
-      data: { admin: false}
+      data: { admin: false},
     },
     {
       path: 'upload-csv',
       component: UploadCsvComponent,
       canActivate: [ AuthGuard ],
-      data: { admin: true}
+      data: { admin: true},
     },
     {
       path: '',
