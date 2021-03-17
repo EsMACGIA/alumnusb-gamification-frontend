@@ -18,8 +18,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private nbDialogService: NbDialogService,
-    private profileService: ProfileService,
-    private dialogService: NbDialogService) {}
+    private profileService: ProfileService) {}
 
   ngOnInit() {
     this.id = Number(localStorage.getItem('userId'));
@@ -37,7 +36,7 @@ export class ProfileComponent implements OnInit {
   }
 
   editProfilePhoto(dialog: TemplateRef<any>) {
-    this.dialogService.open(
+    this.nbDialogService.open(
       dialog);
   }
 
