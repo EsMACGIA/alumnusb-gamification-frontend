@@ -10,6 +10,7 @@ import {
   NbInputModule,
   NbCheckboxModule,
   NbSelectModule,
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -32,6 +33,7 @@ import { ProfileService } from './profile.service';
       NbCheckboxModule,
       NbSelectModule,
       ThemeModule,
+      NbSpinnerModule,
     ],
     declarations: [
       ProfileComponent,

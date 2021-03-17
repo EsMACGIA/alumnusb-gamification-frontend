@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
 
   profileData: ProfileModel = new ProfileModel();
   id: number;
+  loading = false;
 
   constructor(
     private nbDialogService: NbDialogService,
@@ -25,10 +26,12 @@ export class ProfileComponent implements OnInit {
   }
 
   getProfileData(id) {
-    this.profileService.getProfile(id).subscribe(data => {
+    this.loading = true;
+    this.profileService.getProfile(this.id).subscribe(data => {
       if (data) {
         this.profileData = data;
       }
+      this.loading = false;
     });
   }
 

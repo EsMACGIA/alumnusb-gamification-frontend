@@ -18,6 +18,7 @@ export class NgxLoginComponent extends NbLoginComponent {
   preventDuplicates = false;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   index = 1;
+  loading = false;
 
   constructor(
     private authService: AuthService,
@@ -31,6 +32,7 @@ export class NgxLoginComponent extends NbLoginComponent {
   }
 
   auth(user) {
+    this.loading = true;
     this.authService.login(user).subscribe(
       data => {
         if (data) {
@@ -42,12 +44,13 @@ export class NgxLoginComponent extends NbLoginComponent {
             localStorage.setItem('username', data.username);
             this.router.navigate(['/']);
           } else if (data.error) {
+            this.loading = false;
             this.showToast('danger', 'Hubo un error al iniciar sesión', '');
           }
         }
       },
       err => {
-        this.showToast('danger', 'hubo un error, intente de nuevo', '');
+        this.showToast('danger', 'Hubo un error, intente de nuevo', '');
       },
     );
   }

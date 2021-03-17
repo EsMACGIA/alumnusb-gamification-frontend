@@ -60,8 +60,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('landing-page');
     this.user = this.authService.getUserInfo();
-    this.isAuthenticated = this.authService.isAuthenticated();
-    this.isAdmin = (this.user.isAdmin == 'true');
   }
   ngOnDestroy() {
     this.alive = false;
