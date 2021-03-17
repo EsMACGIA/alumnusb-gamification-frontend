@@ -79,16 +79,16 @@
               {{user.username}}
             </button>
             <div aria-labelledby="dropdownMenuButton" class="dropdown-menu">
-              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_profile']" *ngIf="!isAdmin">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_profile']" *ngIf="!authService.isAdmin()">
                 Mi perfil
               </a>
-              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_stats']" *ngIf="!isAdmin">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_stats']" *ngIf="!authService.isAdmin()">
                 Estadísticas
               </a>
-              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_achievements']" *ngIf="!isAdmin">
+              <a class="dropdown-item text-dark" [routerLink]="['/pages/my_achievements']" *ngIf="!authService.isAdmin()">
                 Mis Logros
               </a>
-              <a class="dropdown-item text-dark" [routerLink]="['pages/upload-csv']" *ngIf="isAdmin">
+              <a class="dropdown-item text-dark" [routerLink]="['pages/upload-csv']" *ngIf="authService.isAdmin()">
                 Cargar CSV
               </a>
             </div>
