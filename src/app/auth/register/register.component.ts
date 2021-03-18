@@ -6,13 +6,11 @@ import { Router } from '@angular/router';
 
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
 
-
 @Component({
   selector: 'ngx-register',
   templateUrl: './register.component.html',
 })
 export class NgxRegisterComponent extends NbRegisterComponent {
-
   destroyByClick = false;
   loading = false;
   duration = 4000;
@@ -39,16 +37,18 @@ export class NgxRegisterComponent extends NbRegisterComponent {
         if (data.id) {
           this.showToast('success', 'Te has registrado satisfactoriamente', '');
           this.router.navigate(['/auth/login']);
-        } else if (data.username) {
-          this.showToast('danger', 'Error al registrar', data.username[0]);
-        } else if (data.password) {
-          this.showToast('danger', 'Error al registrar', data.password[0]);
-        } else if (data.email) {
-          this.showToast('danger', 'Error al registrar', data.email[0]);
+        } else if (data.error) {
+          for (const error of data.error.error) {
+            this.showToast('danger', error, '');
+          }
         }
         this.loading = false;
       }
-    });
+    },
+    err => {
+      this.showToast('danger', 'Hubo un error, intente de nuevo', '');
+    },
+    );
   }
 
   private showToast(type: NbComponentStatus, title: string, body: string) {
@@ -67,5 +67,4 @@ export class NgxRegisterComponent extends NbRegisterComponent {
       title,
       config);
   }
-
 }
