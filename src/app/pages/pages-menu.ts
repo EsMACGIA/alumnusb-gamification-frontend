@@ -25,4 +25,9 @@ export const MENU_USUARIO: NbMenuItem[] = [
     icon: 'award-outline',
     link: '/pages/my_achievements',
   },
+  {
+    title: 'Solicitudes de Amistad',
+    icon: 'people-outline',
+    link: '/pages/requests',
+  },
 ];

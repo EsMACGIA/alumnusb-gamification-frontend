@@ -11,6 +11,7 @@ import { StatsModule } from './stats/stats.module';
 import { ProfileModule } from './profile/profile.module';
 import { AchievementsModule } from './achievements/achievements.module';
 import { UploadCsvModule } from './upload-csv/upload-csv.module';
+import { RequestsModule } from './requests/requests.module'
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { UploadCsvModule } from './upload-csv/upload-csv.module';
     StatsModule,
     AchievementsModule,
     UploadCsvModule,
+    RequestsModule,
   ],
   declarations: [
     PagesComponent,

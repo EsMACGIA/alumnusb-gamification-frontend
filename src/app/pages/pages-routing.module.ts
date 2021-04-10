@@ -7,6 +7,7 @@ import { StatsComponent } from './stats/stats.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
+import { RequestsComponent } from './requests/requests.component'
 import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [{
@@ -28,6 +29,12 @@ const routes: Routes = [{
     {
       path: 'my_stats',
       component: StatsComponent,
+      canActivate: [ AuthGuard ],
+      data: { admin: false},
+    },
+    {
+      path: 'requests',
+      component: RequestsComponent,
       canActivate: [ AuthGuard ],
       data: { admin: false},
     },
