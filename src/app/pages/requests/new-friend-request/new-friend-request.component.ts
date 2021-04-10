@@ -45,7 +45,6 @@ export class NewFriendRequestComponent implements OnInit {
       this.showErrorEmpty = false;
       this.newFriendsRequestService.sendInvitation(this.friendUsername).subscribe(
         data => {
-          console.log(data);
           if (data && !data.error) {
             this.showToast('success', `Solicitud enviada con éxito al usuario ${this.friendUsername}`, '');
             this.ref.close();
