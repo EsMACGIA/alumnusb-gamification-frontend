@@ -40,6 +40,7 @@ export class FriendsRankingComponent implements OnInit {
   settings = {
     actions: false,
     hideSubHeader: true,
+    noDataMessage: 'No tienes ningun amigo :(',
     columns: {
       ranking: {
         title: 'Ranking',
