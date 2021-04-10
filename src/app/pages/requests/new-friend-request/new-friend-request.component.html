@@ -14,7 +14,11 @@
         </nb-card-body>
     <nb-card-footer class="d-flex justify-content-around">
       <button class="cancel" nbButton status="danger" (click)="cancel()">Cancelar</button>
-      <button nbButton status="success" (click)="sendInviteFriend()">Enviar solicitud</button>
+      <button 
+        nbButton status="success" (click)="sendInviteFriend()"
+        [nbSpinner]="loading"
+        style="min-width: 130px;"
+      >{{loading ? '' : 'Enviar solicitud'}}</button>
     </nb-card-footer>
   </nb-card>
 </div>

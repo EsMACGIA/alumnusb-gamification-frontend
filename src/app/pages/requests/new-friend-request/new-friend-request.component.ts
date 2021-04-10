@@ -40,8 +40,8 @@ export class NewFriendRequestComponent implements OnInit {
   }
 
   sendInviteFriend() {
-    this.loading = true;
     if (this.friendUsername){
+      this.loading = true;
       this.showErrorEmpty = false;
       this.newFriendsRequestService.sendInvitation(this.friendUsername).subscribe(
         data => {
