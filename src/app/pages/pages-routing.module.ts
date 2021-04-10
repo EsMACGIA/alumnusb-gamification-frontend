@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 
 const routes: Routes = [{
   path: '',
@@ -36,6 +37,12 @@ const routes: Routes = [{
       component: UploadCsvComponent,
       canActivate: [ AuthGuard ],
       data: { admin: true},
+    },
+    {
+      path: 'new-friend-request',
+      component: NewFriendRequestComponent,
+      canActivate: [ AuthGuard ],
+      data: { admin: false},
     },
     {
       path: '',
