@@ -7,8 +7,9 @@ import { StatsComponent } from './stats/stats.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
+import { RequestsComponent } from './requests/requests.component'
 import { AuthGuard } from '../auth/auth.guard';
-import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
+import { NewFriendRequestComponent } from './requests/new-friend-request/new-friend-request.component';
 
 const routes: Routes = [{
   path: '',
@@ -33,16 +34,16 @@ const routes: Routes = [{
       data: { admin: false},
     },
     {
+      path: 'requests',
+      component: RequestsComponent,
+      canActivate: [ AuthGuard ],
+      data: { admin: false},
+    },
+    {
       path: 'upload-csv',
       component: UploadCsvComponent,
       canActivate: [ AuthGuard ],
       data: { admin: true},
-    },
-    {
-      path: 'new-friend-request',
-      component: NewFriendRequestComponent,
-      canActivate: [ AuthGuard ],
-      data: { admin: false},
     },
     {
       path: '',

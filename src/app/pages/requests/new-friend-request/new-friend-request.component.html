@@ -3,10 +3,11 @@
     <nb-card-header>Buscar amigo</nb-card-header>
         <nb-card-body>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-12">
               <div class="form-group">
                 <label for="friendUsername" class="label">Nombre de usuario de tu amigo</label>
                 <input type="text" nbInput [(ngModel)]="friendUsername" fullWidth id="friendUsername" placeholder="Nombre de usuario de tu amigo">
+                <p *ngIf="showErrorEmpty" class="text-danger mt-3">Debe ingresar un nombre de usuario</p>
               </div>
             </div>
           </div>
