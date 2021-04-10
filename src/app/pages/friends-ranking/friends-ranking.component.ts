@@ -12,7 +12,7 @@ import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalP
   templateUrl: './friends-ranking.html',
 })
 
-export class FriendsRankingComponent implements OnInit{
+export class FriendsRankingComponent implements OnInit {
   userId: Number;
   source: LocalDataSource = new LocalDataSource();
   friends: FriendsRankingModel[];
