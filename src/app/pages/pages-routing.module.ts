@@ -6,6 +6,7 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 import { StatsComponent } from './stats/stats.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { FriendsRankingComponent } from './friends-ranking/friends-ranking.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
 import { AuthGuard } from '../auth/auth.guard';
 
@@ -28,6 +29,12 @@ const routes: Routes = [{
     {
       path: 'my_stats',
       component: StatsComponent,
+      canActivate: [ AuthGuard ],
+      data: { admin: false},
+    },
+    {
+      path: 'my_friends',
+      component: FriendsRankingComponent,
       canActivate: [ AuthGuard ],
       data: { admin: false},
     },
