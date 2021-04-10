@@ -37,12 +37,21 @@ export class ProfileComponent implements OnInit {
 
   getProfileData(id) {
     this.loading = true;
-    this.profileService.getProfile(this.id).subscribe(data => {
-      if (data) {
-        this.profileData = data;
-      }
-      this.loading = false;
-    });
+    this.profileService.getProfile(this.id).subscribe(
+      data => {
+        if (data) {
+          this.profileData = data;
+        } else if (data.error) {
+          for (const error of data.error.error) {
+            this.showToast('danger', error, '');
+          }
+        }
+        this.loading = false;
+      },
+      err => {
+        this.showToast('danger', 'Hubo un error, intente de nuevo', '');
+      },
+    );
   }
 
   editProfilePhoto(dialog: TemplateRef<any>) {

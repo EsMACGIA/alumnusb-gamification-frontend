@@ -17,6 +17,8 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
 import { RequestsComponent } from './requests.component';
 
+import { RequestsService } from './requests.service';
+
 @NgModule({
   declarations: [RequestsComponent],
   imports: [
@@ -32,6 +34,9 @@ import { RequestsComponent } from './requests.component';
     NbSpinnerModule,
     NbLayoutModule,
     Ng2SmartTableModule,
-  ]
+  ],
+  providers: [
+    RequestsService,
+  ],
 })
 export class RequestsModule { }
