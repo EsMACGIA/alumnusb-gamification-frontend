@@ -1,10 +1,12 @@
-<nb-card>
-  <nb-card-header>
-    Solicitudes de Amistad
-  </nb-card-header>
+<div class="request-header">
+  <h1>Solicitudes de Amistad</h1>
+  <button nbButton status="info" (click)="openModal()">Añadir a un amigo</button>
+</div>
 
+<nb-card [nbSpinner]="(loading)" >
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="source" (edit)="acceptRequest($event)" (delete)="declineRequest($event)">
     </ng2-smart-table>
   </nb-card-body>
 </nb-card>
+

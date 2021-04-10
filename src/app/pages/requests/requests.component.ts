@@ -5,6 +5,9 @@ import { RequestModel } from './request.model';
 import { RequestsService } from './requests.service';
 import { AuthService } from '../../auth/auth.service';
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
+import { NbDialogService } from '@nebular/theme';
+import { NewFriendRequestService } from './new-friend-request/new-friend-request-service';
+import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 
 @Component({
   selector: 'ngx-requests',
@@ -53,6 +56,8 @@ export class RequestsComponent implements OnInit {
   };
 
   constructor(
+    private nbDialogService:NbDialogService,
+    private newFriendsRequestService:NewFriendRequestService,
     private requestService: RequestsService,
     private toastrService: NbToastrService,
     public authService: AuthService,
@@ -65,7 +70,7 @@ export class RequestsComponent implements OnInit {
   source: LocalDataSource = new LocalDataSource();
 
   getRequests() {
-    this.loading;
+    this.loading = true;
     this.user = this.authService.getUserInfo();
     this.requestService.getRequests(this.user.username).subscribe(
       data => {
@@ -136,6 +141,10 @@ export class RequestsComponent implements OnInit {
       body,
       title,
       config);
+  }
+
+  openModal() {
+    this.nbDialogService.open(NewFriendRequestComponent, { closeOnBackdropClick: false , hasScroll: true, context: { newFriendsRequestService: this.newFriendsRequestService }})
   }
 
 }

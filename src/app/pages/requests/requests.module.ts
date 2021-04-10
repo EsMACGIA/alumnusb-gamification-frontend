@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
   NbCardModule, 
   NbIconModule, 
@@ -10,17 +11,23 @@ import {
   NbActionsModule,
   NbSpinnerModule,
   NbLayoutModule,
+  NbInputModule,
 } from '@nebular/theme';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
+import { NewFriendRequestService } from './new-friend-request/new-friend-request-service';
+import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 import { RequestsComponent } from './requests.component';
 
 import { RequestsService } from './requests.service';
 
 @NgModule({
-  declarations: [RequestsComponent],
+  declarations: [
+    RequestsComponent,
+    NewFriendRequestComponent,
+  ],
   imports: [
     ThemeModule,
     NbCardModule, 
@@ -34,9 +41,13 @@ import { RequestsService } from './requests.service';
     NbSpinnerModule,
     NbLayoutModule,
     Ng2SmartTableModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NbInputModule,
   ],
   providers: [
     RequestsService,
+    NewFriendRequestService,
   ],
 })
 export class RequestsModule { }

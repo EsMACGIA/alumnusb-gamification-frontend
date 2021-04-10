@@ -9,6 +9,7 @@ import { AchievementsComponent } from './achievements/achievements.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
 import { RequestsComponent } from './requests/requests.component'
 import { AuthGuard } from '../auth/auth.guard';
+import { NewFriendRequestComponent } from './requests/new-friend-request/new-friend-request.component';
 
 const routes: Routes = [{
   path: '',

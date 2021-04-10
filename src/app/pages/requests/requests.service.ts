@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../../app.base.service';
 import { Observable } from 'rxjs';
-import { RequestModel } from './request.model';
 
 @Injectable()
 export class RequestsService extends BaseService {
@@ -15,6 +14,6 @@ export class RequestsService extends BaseService {
   }
 
   declineRequest(username): Observable<any> {
-    return this.deleteBase('accounts/friend_requests/' + username, this.setHeaders());
+    return this.deleteBase({},'accounts/friend_requests/' + username, this.setHeaders());
   }
 }
