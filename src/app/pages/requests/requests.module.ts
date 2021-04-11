@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { 
-  NbCardModule, 
-  NbIconModule, 
-  NbTreeGridModule, 
+import {
+  NbCardModule,
+  NbIconModule,
+  NbTreeGridModule,
   NbButtonModule,
   NbRadioModule,
   NbSelectModule,
@@ -29,9 +29,9 @@ import { RequestsService } from './requests.service';
   ],
   imports: [
     ThemeModule,
-    NbCardModule, 
-    NbIconModule, 
-    NbTreeGridModule, 
+    NbCardModule,
+    NbIconModule,
+    NbTreeGridModule,
     NbButtonModule,
     NbRadioModule,
     NbSelectModule,

@@ -11,7 +11,7 @@ import { NewFriendRequestComponent } from './new-friend-request/new-friend-reque
 @Component({
   selector: 'ngx-requests',
   templateUrl: './requests.component.html',
-  styleUrls: ['./requests.component.scss']
+  styleUrls: ['./requests.component.scss'],
 })
 export class RequestsComponent implements OnInit {
 
@@ -22,17 +22,17 @@ export class RequestsComponent implements OnInit {
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   index = 1;
 
-  loading= false;
+  loading = false;
   user: any;
-  requests:RequestModel[];
+  requests: RequestModel[];
 
-  //Settings for Smart Table
+  // Settings for Smart Table
   settings = {
     actions: {
       columnTitle: 'Acciones',
       position: 'right',
     },
-    mode:'external',
+    mode: 'external',
     edit: {
       editButtonContent: '<i class="nb-checkmark"></i>',
     },
@@ -51,11 +51,11 @@ export class RequestsComponent implements OnInit {
       },
     },
     hideSubHeader: true,
-    noDataMessage: 'No tienes solicitudes de amistad'
+    noDataMessage: 'No tienes solicitudes de amistad',
   };
 
   constructor(
-    private nbDialogService:NbDialogService,
+    private nbDialogService: NbDialogService,
     private requestService: RequestsService,
     private toastrService: NbToastrService,
     public authService: AuthService,
@@ -74,21 +74,21 @@ export class RequestsComponent implements OnInit {
       data => {
         if (data) {
           this.requests = data.requesting_users;
-          this.source.load(this.requests)
+          this.source.load(this.requests);
         } else if (data.error) {
           for (const error of data.error.error) {
             this.showToast('danger', error, '');
           }
         }
         this.loading = false;
-    })
+    });
   }
 
   acceptRequest(event) {
     const users = {
       username_a: this.user.username,
-      username_b: event.data.username
-    }
+      username_b: event.data.username,
+    };
     this.requestService.acceptRequest(users, this.user.username).subscribe(
       data => {
         if (data && !data.error) {
@@ -98,7 +98,7 @@ export class RequestsComponent implements OnInit {
             this.showToast('danger', error, '');
           }
         }
-        this.getRequests()
+        this.getRequests();
       },
       err => {
         this.showToast('danger', 'Hubo un error, intente de nuevo', '');
@@ -116,7 +116,7 @@ export class RequestsComponent implements OnInit {
             this.showToast('danger', error, '');
           }
         }
-        this.getRequests()
+        this.getRequests();
       },
       err => {
         this.showToast('danger', 'Hubo un error, intente de nuevo', '');
@@ -142,13 +142,13 @@ export class RequestsComponent implements OnInit {
   }
 
   openModal() {
-    let modal_info = { 
-      closeOnBackdropClick: false , 
-      hasScroll: true, 
-      context: 
-        { newFriendsRequestService: this.requestService }
-    }
-    this.nbDialogService.open(NewFriendRequestComponent, modal_info)
+    const modal_info = {
+      closeOnBackdropClick: false ,
+      hasScroll: true,
+      context:
+        { newFriendsRequestService: this.requestService },
+    };
+    this.nbDialogService.open(NewFriendRequestComponent, modal_info);
   }
 
 }

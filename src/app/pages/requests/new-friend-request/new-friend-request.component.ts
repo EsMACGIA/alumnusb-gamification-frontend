@@ -12,16 +12,16 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class NewFriendRequestComponent implements OnInit {
 
-  destroyByClick:boolean = false;
-  duration:number = 4000;
-  hasIcon:boolean = true;
-  preventDuplicates:boolean = false;
+  destroyByClick: boolean = false;
+  duration: number = 4000;
+  hasIcon: boolean = true;
+  preventDuplicates: boolean = false;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
-  index:number = 1;
-  friendUsername:string;
-  showErrorEmpty:boolean = false;
-  loading:boolean = false;
-  newFriendsRequestService:RequestsService
+  index: number = 1;
+  friendUsername: string;
+  showErrorEmpty: boolean = false;
+  loading: boolean = false;
+  newFriendsRequestService: RequestsService;
 
   constructor(
     protected ref: NbDialogRef<NewFriendRequestComponent>,
@@ -35,12 +35,12 @@ export class NewFriendRequestComponent implements OnInit {
     this.ref.close(this.friendUsername);
   }
 
-  closeModal(){
+  closeModal() {
     this.ref.close();
   }
 
   sendInviteFriend() {
-    if (this.friendUsername){
+    if (this.friendUsername) {
       this.loading = true;
       this.showErrorEmpty = false;
       this.newFriendsRequestService.sendInvitation(this.friendUsername).subscribe(
@@ -59,7 +59,7 @@ export class NewFriendRequestComponent implements OnInit {
           this.showToast('danger', 'Hubo un error, intente de nuevo', '');
         },
       );
-    }else{
+    } else {
       this.loading = false;
       this.showErrorEmpty = true;
     }

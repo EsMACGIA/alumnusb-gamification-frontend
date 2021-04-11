@@ -8,7 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { FriendsRankingComponent } from './friends-ranking/friends-ranking.component';
 import { UploadCsvComponent } from './upload-csv/upload-csv.component';
-import { RequestsComponent } from './requests/requests.component'
+import { RequestsComponent } from './requests/requests.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { NewFriendRequestComponent } from './requests/new-friend-request/new-friend-request.component';
 

@@ -14,10 +14,10 @@ export class RequestsService extends BaseService {
   }
 
   declineRequest(username): Observable<any> {
-    return this.deleteBase({},'accounts/friend_requests/' + username, this.setHeaders());
+    return this.deleteBase({}, 'accounts/friend_requests/' + username, this.setHeaders());
   }
 
-  sendInvitation(username:string): Observable<any> {
-    return this.postBase({},`accounts/friend_requests/${username}`, this.setHeaders());
+  sendInvitation(username: string): Observable<any> {
+    return this.postBase({}, `accounts/friend_requests/${username}`, this.setHeaders());
   }
 }
