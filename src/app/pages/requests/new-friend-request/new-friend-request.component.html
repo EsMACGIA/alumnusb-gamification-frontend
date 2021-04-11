@@ -1,0 +1,24 @@
+<div class="dialog-container">
+  <nb-card>
+    <nb-card-header>Buscar amigo</nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="friendUsername" class="label">Nombre de usuario de tu amigo</label>
+                <input type="text" nbInput [(ngModel)]="friendUsername" fullWidth id="friendUsername" placeholder="Nombre de usuario de tu amigo">
+                <p *ngIf="showErrorEmpty" class="text-danger mt-3">Debe ingresar un nombre de usuario</p>
+              </div>
+            </div>
+          </div>
+        </nb-card-body>
+    <nb-card-footer class="d-flex justify-content-around">
+      <button class="cancel" nbButton status="danger" (click)="closeModal()">Cancelar</button>
+      <button 
+        nbButton status="success" (click)="sendInviteFriend()"
+        [nbSpinner]="loading"
+        style="min-width: 130px;"
+      >{{loading ? '' : 'Enviar solicitud'}}</button>
+    </nb-card-footer>
+  </nb-card>
+</div>

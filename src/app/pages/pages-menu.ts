@@ -26,6 +26,11 @@ export const MENU_USUARIO: NbMenuItem[] = [
     link: '/pages/my_achievements',
   },
   {
+    title: 'Solicitudes de Amistad',
+    icon: 'people-outline',
+    link: '/pages/requests',
+  },
+  {
     title: 'Ranking de Amigos',
     icon: 'people-outline',
     link: '/pages/my_friends_ranking',
