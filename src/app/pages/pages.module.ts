@@ -10,6 +10,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatsModule } from './stats/stats.module';
 import { ProfileModule } from './profile/profile.module';
 import { AchievementsModule } from './achievements/achievements.module';
+import { FriendsRankingModule } from './friends-ranking/friends-ranking.module';
 import { UploadCsvModule } from './upload-csv/upload-csv.module';
 import { RequestsModule } from './requests/requests.module'
 
@@ -24,6 +25,7 @@ import { RequestsModule } from './requests/requests.module'
     ProfileModule,
     StatsModule,
     AchievementsModule,
+    FriendsRankingModule,
     UploadCsvModule,
     RequestsModule,
   ],
