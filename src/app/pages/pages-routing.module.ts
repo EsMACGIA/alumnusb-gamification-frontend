@@ -33,7 +33,7 @@ const routes: Routes = [{
       data: { admin: false},
     },
     {
-      path: 'my_friends',
+      path: 'my_friends_ranking',
       component: FriendsRankingComponent,
       canActivate: [ AuthGuard ],
       data: { admin: false},

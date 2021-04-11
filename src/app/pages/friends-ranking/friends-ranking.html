@@ -1,5 +1,5 @@
 <h1>Ranking de Amigos</h1>
-<nb-card>
+<nb-card [nbSpinner]="loading" nbSpinnerStatus="info" nbSpinnerSize="large">
     <nb-card-body>
         <ng2-smart-table
             [settings]="settings"

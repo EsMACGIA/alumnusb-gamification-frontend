@@ -28,6 +28,6 @@ export const MENU_USUARIO: NbMenuItem[] = [
   {
     title: 'Ranking de Amigos',
     icon: 'people-outline',
-    link: '/pages/my_friends',
+    link: '/pages/my_friends_ranking',
   },
 ];

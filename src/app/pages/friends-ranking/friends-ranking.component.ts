@@ -35,15 +35,15 @@ export class FriendsRankingComponent implements OnInit {
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
   index = 1;
 
-  loading = false;
+  loading: boolean = false;
 
   settings = {
     actions: false,
     hideSubHeader: true,
-    noDataMessage: 'No tienes ningun amigo :(',
+    noDataMessage: 'No tienes ningún amigo :(',
     columns: {
       ranking: {
-        title: 'Ranking',
+        title: 'Posición',
         type: 'number',
         filter: false,
       },
@@ -64,15 +64,22 @@ export class FriendsRankingComponent implements OnInit {
     },
   };
 
+  // Función para ordenar el arreglo de acuerdo a la cantidad donada y le agrega el campo ranking
   sortAndRanking(data) {
-    this.friends.sort((a, b) => a.total_donations < b.total_donations ? 1 : a.total_donations > b.total_donations ? -1 : 0);
+    this.friends.sort((a, b) =>
+      a.total_donations < b.total_donations ? 1 :
+      a.total_donations > b.total_donations ? -1 :
+      a.total_achievements < b.total_achievements ? 1 :
+      a.total_achievements > b.total_achievements ? -1 :
+      0);
     data.forEach(element => {
       element.ranking = data.indexOf(element) + 1;
     });
   }
 
+  // Carga los amigos, los ordena y los guarda en this.friends
   loadFriends() {
-    // this.loading = true;
+    this.loading = true;
     this.userId = this.authService.userId;
     this.friendsRankingService.getFriendsRanking(this.userId).subscribe(
       data => {
@@ -87,7 +94,8 @@ export class FriendsRankingComponent implements OnInit {
             this.showToast('danger', error, '');
           }
         }
-        // this.loading = false;
+        this.loading = false;
+
       },
       err => {
         this.showToast('danger', 'Hubo un error, intente de nuevo', '');
