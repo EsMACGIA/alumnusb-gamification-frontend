@@ -91,6 +91,9 @@
               <a class="dropdown-item text-dark" [routerLink]="['pages/upload-csv']" *ngIf="authService.isAdmin()">
                 Cargar CSV
               </a>
+              <a class="dropdown-item text-dark" [routerLink]="['pages/requests']" *ngIf="!authService.isAdmin()">
+                Solicitudes de Amistad
+              </a>
             </div>
           </div>
         </li>

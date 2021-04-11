@@ -6,7 +6,6 @@ import { RequestsService } from './requests.service';
 import { AuthService } from '../../auth/auth.service';
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition} from '@nebular/theme';
 import { NbDialogService } from '@nebular/theme';
-import { NewFriendRequestService } from './new-friend-request/new-friend-request-service';
 import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 
 @Component({
@@ -57,7 +56,6 @@ export class RequestsComponent implements OnInit {
 
   constructor(
     private nbDialogService:NbDialogService,
-    private newFriendsRequestService:NewFriendRequestService,
     private requestService: RequestsService,
     private toastrService: NbToastrService,
     public authService: AuthService,
@@ -144,7 +142,13 @@ export class RequestsComponent implements OnInit {
   }
 
   openModal() {
-    this.nbDialogService.open(NewFriendRequestComponent, { closeOnBackdropClick: false , hasScroll: true, context: { newFriendsRequestService: this.newFriendsRequestService }})
+    let modal_info = { 
+      closeOnBackdropClick: false , 
+      hasScroll: true, 
+      context: 
+        { newFriendsRequestService: this.requestService }
+    }
+    this.nbDialogService.open(NewFriendRequestComponent, modal_info)
   }
 
 }

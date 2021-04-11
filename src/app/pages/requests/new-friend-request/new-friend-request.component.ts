@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../auth/auth.service';
-import { NewFriendRequestService } from './new-friend-request-service';
+import { RequestsService } from '../requests.service';
 
 import { NbToastrService, NbComponentStatus, NbGlobalPosition, NbGlobalPhysicalPosition, NbDialogService, NbDialogRef} from '@nebular/theme';
 import { ThrowStmt } from '@angular/compiler';
@@ -12,16 +12,16 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class NewFriendRequestComponent implements OnInit {
 
-  destroyByClick = false;
-  duration = 4000;
-  hasIcon = true;
-  preventDuplicates = false;
+  destroyByClick:boolean = false;
+  duration:number = 4000;
+  hasIcon:boolean = true;
+  preventDuplicates:boolean = false;
   position: NbGlobalPosition = NbGlobalPhysicalPosition.TOP_RIGHT;
-  index = 1;
+  index:number = 1;
   friendUsername:string;
   showErrorEmpty:boolean = false;
-  loading = false;
-  newFriendsRequestService:NewFriendRequestService
+  loading:boolean = false;
+  newFriendsRequestService:RequestsService
 
   constructor(
     protected ref: NbDialogRef<NewFriendRequestComponent>,
@@ -35,7 +35,7 @@ export class NewFriendRequestComponent implements OnInit {
     this.ref.close(this.friendUsername);
   }
 
-  cancel(){
+  closeModal(){
     this.ref.close();
   }
 
@@ -60,6 +60,7 @@ export class NewFriendRequestComponent implements OnInit {
         },
       );
     }else{
+      this.loading = false;
       this.showErrorEmpty = true;
     }
   }

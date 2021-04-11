@@ -17,7 +17,6 @@ import {
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { NewFriendRequestService } from './new-friend-request/new-friend-request-service';
 import { NewFriendRequestComponent } from './new-friend-request/new-friend-request.component';
 import { RequestsComponent } from './requests.component';
 
@@ -47,7 +46,6 @@ import { RequestsService } from './requests.service';
   ],
   providers: [
     RequestsService,
-    NewFriendRequestService,
   ],
 })
 export class RequestsModule { }
